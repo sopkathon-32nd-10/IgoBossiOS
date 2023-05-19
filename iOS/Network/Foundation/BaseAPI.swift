@@ -36,7 +36,7 @@ class BaseAPI{
         case 200..<205:
             return .success(realData as Any)
         case 400..<500:
-            return .requestErr(decodedData.status_message ?? "요청에러")
+            return .requestErr("요청에러") //decodedData.status_message ?? 
         case 500:
             return .serverErr
         default:

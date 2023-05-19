@@ -25,6 +25,7 @@
 		D294E2C82A17DCFF001E74F1 /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294E2C72A17DCFF001E74F1 /* BaseTargetType.swift */; };
 		D294E2CA2A17DD11001E74F1 /* AlamofireLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294E2C92A17DD11001E74F1 /* AlamofireLogger.swift */; };
 		D294E2CC2A17DD3A001E74F1 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294E2CB2A17DD3A001E74F1 /* Config.swift */; };
+		D294E2D02A17DD99001E74F1 /* VoidResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294E2CF2A17DD99001E74F1 /* VoidResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		D294E2C72A17DCFF001E74F1 /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
 		D294E2C92A17DD11001E74F1 /* AlamofireLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireLogger.swift; sourceTree = "<group>"; };
 		D294E2CB2A17DD3A001E74F1 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		D294E2CF2A17DD99001E74F1 /* VoidResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoidResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		D294E2942A17D55B001E74F1 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				D294E2CD2A17DD82001E74F1 /* Data */,
 				D294E2BB2A17DBFD001E74F1 /* Network */,
 				D294E2B92A17DBEE001E74F1 /* Presentation */,
 				D294E2B82A17DA60001E74F1 /* Resource */,
@@ -145,6 +148,22 @@
 				D294E2CB2A17DD3A001E74F1 /* Config.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		D294E2CD2A17DD82001E74F1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D294E2CE2A17DD8B001E74F1 /* Common */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D294E2CE2A17DD8B001E74F1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D294E2CF2A17DD99001E74F1 /* VoidResult.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +257,7 @@
 				D294E2CA2A17DD11001E74F1 /* AlamofireLogger.swift in Sources */,
 				D294E29A2A17D55B001E74F1 /* ViewController.swift in Sources */,
 				D294E2C22A17DCB7001E74F1 /* BaseAPI.swift in Sources */,
+				D294E2D02A17DD99001E74F1 /* VoidResult.swift in Sources */,
 				D294E2962A17D55B001E74F1 /* AppDelegate.swift in Sources */,
 				D294E2982A17D55B001E74F1 /* SceneDelegate.swift in Sources */,
 				D294E2C62A17DCE5001E74F1 /* NetworkResult.swift in Sources */,
