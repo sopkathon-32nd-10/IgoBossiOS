@@ -13,6 +13,10 @@
 		D294E29D2A17D55B001E74F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D294E29B2A17D55B001E74F1 /* Main.storyboard */; };
 		D294E29F2A17D55D001E74F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D294E29E2A17D55D001E74F1 /* Assets.xcassets */; };
 		D294E2A22A17D55D001E74F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D294E2A02A17D55D001E74F1 /* LaunchScreen.storyboard */; };
+		D294E2AD2A17D884001E74F1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D294E2AC2A17D884001E74F1 /* SnapKit */; };
+		D294E2B02A17D88E001E74F1 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D294E2AF2A17D88E001E74F1 /* Then */; };
+		D294E2B32A17D898001E74F1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D294E2B22A17D898001E74F1 /* Alamofire */; };
+		D294E2B62A17D8A2001E74F1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D294E2B52A17D8A2001E74F1 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D294E2B62A17D8A2001E74F1 /* Kingfisher in Frameworks */,
+				D294E2B32A17D898001E74F1 /* Alamofire in Frameworks */,
+				D294E2AD2A17D884001E74F1 /* SnapKit in Frameworks */,
+				D294E2B02A17D88E001E74F1 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +91,12 @@
 			dependencies = (
 			);
 			name = iOS;
+			packageProductDependencies = (
+				D294E2AC2A17D884001E74F1 /* SnapKit */,
+				D294E2AF2A17D88E001E74F1 /* Then */,
+				D294E2B22A17D898001E74F1 /* Alamofire */,
+				D294E2B52A17D8A2001E74F1 /* Kingfisher */,
+			);
 			productName = iOS;
 			productReference = D294E2922A17D55B001E74F1 /* iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +125,12 @@
 				Base,
 			);
 			mainGroup = D294E2892A17D55B001E74F1;
+			packageReferences = (
+				D294E2AB2A17D884001E74F1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				D294E2AE2A17D88E001E74F1 /* XCRemoteSwiftPackageReference "Then" */,
+				D294E2B12A17D898001E74F1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				D294E2B42A17D8A2001E74F1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = D294E2932A17D55B001E74F1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -358,6 +378,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D294E2AB2A17D884001E74F1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		D294E2AE2A17D88E001E74F1 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		D294E2B12A17D898001E74F1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		D294E2B42A17D8A2001E74F1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D294E2AC2A17D884001E74F1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D294E2AB2A17D884001E74F1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		D294E2AF2A17D88E001E74F1 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D294E2AE2A17D88E001E74F1 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		D294E2B22A17D898001E74F1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D294E2B12A17D898001E74F1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		D294E2B52A17D8A2001E74F1 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D294E2B42A17D8A2001E74F1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D294E28A2A17D55B001E74F1 /* Project object */;
 }
