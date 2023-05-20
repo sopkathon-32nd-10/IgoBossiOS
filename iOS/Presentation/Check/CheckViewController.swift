@@ -67,8 +67,8 @@ final class CheckViewController: BaseViewController {
         }
         
         myAchievementRate.do {
-            $0.backgroundColor = .soptYellow300
-            $0.alpha = 0.7
+            $0.image = Image.myAchievementRate
+            $0.contentMode = .left
             $0.makeCornerRadius(ratio: 10)
         }
         
@@ -129,12 +129,13 @@ final class CheckViewController: BaseViewController {
         
         achievementRate.snp.makeConstraints {
             $0.top.equalTo(achievementText.snp.bottom).offset(12)
-            $0.leading.trailing.equalToSuperview().inset(36)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(300)
             $0.height.equalTo(24)
         }
         
         checkTableView.snp.makeConstraints {
-            $0.top.equalTo(achievementRate.snp.bottom).offset(5)
+            $0.top.equalTo(achievementRate.snp.bottom)
             $0.leading.trailing.equalToSuperview().inset(36)
             $0.bottom.equalToSuperview()
         }
@@ -177,8 +178,8 @@ extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
             self.myAchievementRate.snp.remakeConstraints {
-                $0.top.equalTo(self.achievementText.snp.bottom).offset(12)
-                $0.leading.equalToSuperview().inset(36)
+                $0.top.equalTo(self.achievementRate)
+                $0.leading.equalTo(self.achievementRate)
                 $0.height.equalTo(24)
                 $0.width.equalTo(self.myAllCount * 30)
             }
