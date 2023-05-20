@@ -21,7 +21,7 @@ class PayResultViewController: UIViewController {
 
 private extension PayResultViewController {
     func setUI() {
-        view.backgroundColor = UIColor.soptGrey000
+        view.backgroundColor = UIColor.clear
     }
 
     func setLayout() {

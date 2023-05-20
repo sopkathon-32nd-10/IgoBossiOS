@@ -10,22 +10,28 @@ import UIKit
 import SnapKit
 import Then
 
+import SafariServices
+
 final class CheckViewController: BaseViewController {
-        
+    
     private var dummy = Check.dummy() {
         didSet {
             self.checkTableView.reloadData()
         }
     }
     
+    var myAllCount = 0
+    
     private let checkListLabel = UILabel()
     private let checkListContent = UILabel()
     private let achievementText = UILabel()
-    private let achievementRate = UIView()
+    private let achievementPercent = UILabel()
+    private let achievementRate = UIImageView()
+    private let myAchievementRate = UIImageView()
     
     private let myFooterView = UIView()
     private let websiteButton = UIButton()
-
+    
     private let checkTableView = UITableView(frame: .zero, style: .grouped)
     
     override func setUI() {
@@ -34,24 +40,35 @@ final class CheckViewController: BaseViewController {
         checkListLabel.do {
             $0.text = "근로기준\n체크리스트"
             $0.numberOfLines = 2
-            $0.textColor = .soptGrey400
+            $0.textColor = .soptGrey600
             $0.font = .soptHeadLine1
         }
         
         checkListContent.do {
             $0.text = "원활한 근로를 위해 필요한 준비물들을 체크해보세요"
-            $0.textColor = .soptGrey400
+            $0.textColor = .soptGrey500
             $0.font = .soptBody3
         }
         
         achievementText.do {
-            $0.text = "달성률 70%"
-            $0.textColor = .soptGrey400
+            $0.text = "달성률"
+            $0.textColor = .soptGrey600
+            $0.font = .soptHeadLine2
+        }
+        
+        achievementPercent.do {
+            $0.text = "0%"
+            $0.textColor = .soptYellow500
             $0.font = .soptHeadLine2
         }
         
         achievementRate.do {
-            $0.backgroundColor = .soptGrey100
+            $0.image = Image.achievementRate
+        }
+        
+        myAchievementRate.do {
+            $0.image = Image.myAchievementRate
+            $0.contentMode = .left
             $0.makeCornerRadius(ratio: 10)
         }
         
@@ -74,6 +91,7 @@ final class CheckViewController: BaseViewController {
             $0.titleLabel?.textColor = .soptGrey100
             $0.titleLabel?.font = .soptTitle1
             $0.makeCornerRadius(ratio: 10)
+            $0.addTarget(self, action: #selector(websiteButtonClicked), for: .touchUpInside)
         }
         
     }
@@ -82,7 +100,9 @@ final class CheckViewController: BaseViewController {
         view.addSubviews(checkListLabel,
                          checkListContent,
                          achievementText,
+                         achievementPercent,
                          achievementRate,
+                         myAchievementRate,
                          checkTableView)
         
         myFooterView.addSubview(websiteButton)
@@ -102,9 +122,15 @@ final class CheckViewController: BaseViewController {
             $0.leading.equalToSuperview().inset(36)
         }
         
+        achievementPercent.snp.makeConstraints {
+            $0.centerY.equalTo(achievementText)
+            $0.leading.equalTo(achievementText.snp.trailing).offset(10)
+        }
+        
         achievementRate.snp.makeConstraints {
             $0.top.equalTo(achievementText.snp.bottom).offset(12)
-            $0.leading.trailing.equalToSuperview().inset(36)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(300)
             $0.height.equalTo(24)
         }
         
@@ -120,14 +146,22 @@ final class CheckViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview()
         }
     }
-
+    
+    @objc
+    func websiteButtonClicked() {
+        let url = "https://darkened-cobbler-e17.notion.site/4073508e7c6d4f78925c26d70ecdbf0b"
+        let safariViewController = SFSafariViewController(url: URL(string: url)!)
+        safariViewController.modalPresentationStyle = .fullScreen
+        self.present(safariViewController, animated: true)
+    }
+    
 }
 
 extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dummy.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CheckTableViewCell.identifier, for: indexPath) as? CheckTableViewCell else
         {return UITableViewCell()}
@@ -137,6 +171,21 @@ extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
         cell.handler = { [weak self] in
             guard let self else { return }
             self.dummy[indexPath.row].checkTapped.toggle()
+            if self.dummy[indexPath.row].checkTapped {
+                self.myAllCount = self.myAllCount + 1
+            } else {
+                self.myAllCount = self.myAllCount - 1
+            }
+            
+            self.myAchievementRate.snp.remakeConstraints {
+                $0.top.equalTo(self.achievementRate)
+                $0.leading.equalTo(self.achievementRate)
+                $0.height.equalTo(24)
+                $0.width.equalTo(self.myAllCount * 30)
+            }
+            self.achievementPercent.do {
+                $0.text = String(self.myAllCount * 10) + "%"
+            }
         }
         
         return cell
@@ -151,7 +200,10 @@ extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        100
+        if section == 0 {
+            return 100
+        } else {
+            return 0
+        }
     }
-    
 }

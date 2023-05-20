@@ -25,7 +25,7 @@ final class CheckTableViewCell: UITableViewCell {
     
     private let backGround = UIView()
     
-    private let checkBoxButton = UIButton()
+    let checkBoxButton = UIButton()
     private let checkListTitle = UILabel()
     private let checkListContent = UILabel()
         
@@ -45,7 +45,7 @@ final class CheckTableViewCell: UITableViewCell {
         selectionStyle = .none
         
         backGround.do {
-            $0.backgroundColor = .soptGrey100
+            $0.backgroundColor = .soptYellow000
             $0.makeCornerRadius(ratio: 10)
         }
         
@@ -57,12 +57,12 @@ final class CheckTableViewCell: UITableViewCell {
         }
         
         checkListTitle.do{
-            $0.textColor = .soptGrey400
+            $0.textColor = .soptGrey600
             $0.font = .soptTitle2
         }
         
         checkListContent.do {
-            $0.textColor = .soptGrey400
+            $0.textColor = .soptGrey500
             $0.font = .soptBody3
             $0.numberOfLines = 2
         }
@@ -82,8 +82,8 @@ final class CheckTableViewCell: UITableViewCell {
         }
         
         checkBoxButton.snp.makeConstraints {
-            $0.top.leading.equalToSuperview().inset(10)
-            $0.size.equalTo(24)
+            $0.top.leading.equalToSuperview().inset(14)
+            $0.size.equalTo(20)
         }
         
         checkListTitle.snp.makeConstraints {
@@ -93,14 +93,14 @@ final class CheckTableViewCell: UITableViewCell {
         
         checkListContent.snp.makeConstraints {
             $0.leading.equalTo(checkBoxButton.snp.trailing).offset(14)
-            $0.top.equalTo(checkListTitle.snp.bottom).offset(9)
+            $0.top.equalTo(checkListTitle.snp.bottom).offset(8)
         }
 
     }
     
     func tapped() {
-        let string = isTapped ? "튼" : "버"
-        checkBoxButton.setTitle(string, for: .normal)
+        checkBoxButton.setImage(isTapped ? Image.btnCheck : Image.btnUnCheck, for: .normal)
+        backGround.backgroundColor = isTapped ? .soptYellow200 : .soptYellow000
     }
     
     @objc

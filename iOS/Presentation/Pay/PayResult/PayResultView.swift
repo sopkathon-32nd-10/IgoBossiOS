@@ -10,17 +10,21 @@ import UIKit
 class PayResultView: UIView {
 
     private let resultView = UIView().then {
-        $0.backgroundColor = .soptGrey100
-        $0.layer.cornerRadius = 5
+        $0.backgroundColor = .soptWhite
+        $0.layer.cornerRadius = 10
     }
-
-    private let personImage = UIView().then {
-        $0.backgroundColor = .soptGrey200
+    
+    private var backButton = UIButton().then {
+        $0.setImage(UIImage(named: "btn_cancel"), for: .normal)
     }
-//    private let resultImageView = UIImageView().then {
-//
-//    }
-//    private let sectionView = UIView()
+    
+    private let resultImageView = UIImageView().then {
+        $0.image = UIImage(named: "logo")
+    }
+    
+    private let warningImage = UIImageView().then {
+        $0.image = UIImage(named: "ic_warning")
+    }
     
     private let timeTitle = UILabel().then {
         $0.text = "근로시간"
@@ -29,7 +33,9 @@ class PayResultView: UIView {
     }
 
     private let timeLabel = UILabel().then {
-        $0.layer.backgroundColor = UIColor.soptGrey200.cgColor
+        $0.text = "9"
+        $0.font = UIFont.soptHeadLine2
+        $0.textColor = UIColor.soptGrey600
     }
 
     private let timeunitLabel = UILabel().then {
@@ -45,7 +51,9 @@ class PayResultView: UIView {
     }
 
     private let priceLabel = UILabel().then {
-        $0.layer.backgroundColor = UIColor.soptGrey200.cgColor
+        $0.text = "8333"
+        $0.font = UIFont.soptHeadLine2
+        $0.textColor = UIColor.soptGrey600
     }
 
     private let priceunitLabel = UILabel().then {
@@ -55,14 +63,23 @@ class PayResultView: UIView {
     }
 
     private let explainView = UIView().then {
-        $0.backgroundColor = UIColor.soptGrey200
+        $0.backgroundColor = UIColor.soptGrey100
+        $0.layer.cornerRadius = 5
+    }
+    
+    private let explainLabel = UILabel().then {
+        $0.text = "복리후생비 및 시간외 근로수당 등은\n반영되지 않은 금액이며 규정에 따라\n주휴수당도 다르기 때문에 실제\n주급/월급과는 차이가 있습니다."
+        $0.textAlignment = .center
+        $0.font = UIFont.soptBody3
+        $0.textColor = UIColor.soptGrey400
+        $0.numberOfLines = 4
     }
 
     private var helpButton = UIButton().then {
-        $0.backgroundColor = .soptGrey300
+        $0.backgroundColor = .soptYellow500
         $0.setTitle("도움받기", for: .normal)
         $0.titleLabel?.font = .soptTitle2
-        $0.setTitleColor(UIColor.white, for: .normal) ///원래 000이었던 것
+        $0.setTitleColor(UIColor.soptWhite, for: .normal)
         $0.layer.cornerRadius = 5
     }
 
@@ -80,7 +97,9 @@ class PayResultView: UIView {
 
         addSubview(resultView)
 
-        resultView.addSubviews(personImage, timeTitle, timeLabel, timeunitLabel, priceTitle, priceLabel, priceunitLabel, explainView, helpButton)
+        resultView.addSubviews(backButton, resultImageView, timeTitle, timeLabel, timeunitLabel, warningImage, priceTitle, priceLabel, priceunitLabel, explainView, helpButton)
+        
+        explainView.addSubview(explainLabel)
 
         resultView.snp.makeConstraints {
             $0.center.equalToSuperview()
@@ -88,27 +107,37 @@ class PayResultView: UIView {
             $0.height.equalTo(444)
         }
 
-        personImage.snp.makeConstraints {
+        backButton.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-18)
+            $0.width.height.equalTo(18)
+        }
+        
+        resultImageView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalToSuperview().offset(76)
-            $0.width.height.equalTo(90)
+            $0.width.height.equalTo(61)
         }
 
         timeTitle.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(67)
-            $0.top.equalTo(personImage.snp.bottom).offset(33)
+            $0.leading.equalToSuperview().offset(86)
+            $0.top.equalTo(resultImageView.snp.bottom).offset(41)
         }
 
         timeLabel.snp.makeConstraints {
-            $0.leading.equalTo(timeTitle.snp.trailing).offset(6)
+            $0.leading.equalTo(timeTitle.snp.trailing).offset(10)
             $0.top.equalTo(timeTitle.snp.top)
-            $0.width.equalTo(84)
-            $0.height.equalTo(20)
         }
 
         timeunitLabel.snp.makeConstraints {
             $0.top.equalTo(timeTitle.snp.top)
-            $0.leading.equalTo(timeLabel.snp.trailing).offset(6)
+            $0.leading.equalTo(timeLabel.snp.trailing).offset(2)
+        }
+        
+        warningImage.snp.makeConstraints {
+            $0.width.height.equalTo(17)
+            $0.top.equalTo(priceTitle)
+            $0.trailing.equalTo(priceTitle.snp.leading).offset(-5)
         }
 
         priceTitle.snp.makeConstraints {
@@ -117,27 +146,29 @@ class PayResultView: UIView {
         }
 
         priceLabel.snp.makeConstraints {
-            $0.leading.equalTo(priceTitle.snp.trailing).offset(6)
+            $0.leading.equalTo(priceTitle.snp.trailing).offset(10)
             $0.top.equalTo(priceTitle.snp.top)
-            $0.width.equalTo(84)
-            $0.height.equalTo(20)
         }
 
         priceunitLabel.snp.makeConstraints {
             $0.top.equalTo(priceTitle.snp.top)
-            $0.leading.equalTo(priceLabel.snp.trailing).offset(4)
+            $0.leading.equalTo(priceLabel.snp.trailing).offset(2)
         }
 
         explainView.snp.makeConstraints {
-            $0.top.equalTo(priceTitle.snp.bottom).offset(32)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(66)
+            $0.top.equalTo(priceTitle.snp.bottom).offset(35)
+            $0.leading.trailing.equalToSuperview().inset(23)
+            $0.height.equalTo(91)
+        }
+        
+        explainLabel.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
 
         helpButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.bottom.equalToSuperview().inset(24)
-            $0.width.equalTo(108)
+            $0.leading.trailing.equalToSuperview().inset(23)
             $0.height.equalTo(30)
         }
     }
