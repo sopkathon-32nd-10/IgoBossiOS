@@ -41,7 +41,6 @@ final class HomeView : UIView {
     //MARK: - Custom Method
     
     private func style() {
-        self.backgroundColor = .white
         
 //        containerView.do {
 //            $0.layer.shadowColor = UIColor.black.cgColor // 검정색 사용

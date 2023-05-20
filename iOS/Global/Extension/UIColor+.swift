@@ -50,27 +50,27 @@ extension UIColor{
     }
     
     class var soptYellow000 : UIColor {
-        return UIColor(red: 255, green: 191, blue: 0, alpha: 10)
+        return UIColor(r: 255, g: 249, b: 229)
     }
     
     class var soptYellow100 : UIColor {
-        return UIColor(red: 255, green: 191, blue: 0, alpha: 20)
+        return UIColor(r: 255, g: 242, b: 204)
     }
     
     class var soptYellow200 : UIColor {
-        return UIColor(red: 255, green: 191, blue: 0, alpha: 40)
+        return UIColor(r: 255, g: 229, b: 153)
     }
     
     class var soptYellow300 : UIColor {
-        return UIColor(red: 255, green: 191, blue: 0, alpha: 60)
+        return UIColor(r: 255, g: 204, b: 51)
     }
     
     class var soptYellow400 : UIColor {
-        return UIColor(red: 255, green: 191, blue: 0, alpha: 80)
+        return UIColor(r: 255, g: 191, b: 0)
     }
     
     class var soptYellow500 : UIColor {
-        return UIColor(red: 255, green: 191, blue: 0, alpha: 100)
+        return UIColor(r: 255, g: 191, b: 0)
     }
 }
 

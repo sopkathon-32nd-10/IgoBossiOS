@@ -42,6 +42,9 @@ class PayView: UIView {
     //MARK: - Custom Method
 
     private func style() {
+        self.do {
+            $0.backgroundColor = .soptWhite
+        }
         titleLabel.do {
             $0.text = "근로기준 \n적합도 계산기"
             $0.textColor = .soptGrey500

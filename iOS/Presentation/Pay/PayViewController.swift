@@ -22,7 +22,12 @@ class PayViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        style()
         target()
+    }
+    
+    private func style() {
+        self.view.backgroundColor = .soptWhite
     }
     
     private func target() {
