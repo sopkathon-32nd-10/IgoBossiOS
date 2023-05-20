@@ -36,7 +36,7 @@ class TabbarViewController: UITabBarController {
         setLayout()
         setNavigationController()
         setViewController()
-        //setCornerRadius()
+        setCornerRadius()
         selectedIndex = 1
         
     }
@@ -65,11 +65,11 @@ class TabbarViewController: UITabBarController {
     private func setLayout(){
     }
     
-//    private func setCornerRadius(){
-//        tabBar.layer.cornerRadius = 24
-//        tabBar.layer.maskedCorners = [.layerMinXMinYCorner,
-//                                      .layerMaxXMinYCorner]
-//    }
+    private func setCornerRadius(){
+        tabBar.layer.cornerRadius = 20
+        tabBar.layer.maskedCorners = [.layerMinXMinYCorner,
+                                      .layerMaxXMinYCorner]
+    }
     
     private func setNavigationController() {
         homeNavigationContrller.setNavigationBarHidden(true, animated: true)
@@ -79,11 +79,12 @@ class TabbarViewController: UITabBarController {
     
     private func setViewController(){
         
-        homeNavigationContrller.tabBarItem = UITabBarItem(title: "홈", image: nil, tag: 0)
-        payNavigationController.tabBarItem = UITabBarItem(title: "임금", image: nil, tag: 1)
+
+        payNavigationController.tabBarItem = UITabBarItem(title: "임금", image: nil, tag: 0)
+        homeNavigationContrller.tabBarItem = UITabBarItem(title: "홈", image: nil, tag: 1)
         checkNavigationController.tabBarItem = UITabBarItem(title: "체크", image: nil, tag: 2)
         
-        viewControllers = [homeNavigationContrller,payNavigationController,checkNavigationController]
+        viewControllers = [payNavigationController,homeNavigationContrller,checkNavigationController]
     }
 }
 
