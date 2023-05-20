@@ -36,12 +36,12 @@ class BaseViewController : UIViewController{
     
     //MARK: - Custom Method
     
-    private func setUI(){
+    func setUI(){
         view.backgroundColor = .black
         self.navigationController?.isNavigationBarHidden = true
     }
     
-    private func setLayout(){
+    func setLayout(){
         
     }
     
