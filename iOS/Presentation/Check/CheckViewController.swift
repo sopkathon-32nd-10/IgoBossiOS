@@ -20,6 +20,8 @@ final class CheckViewController: BaseViewController {
         }
     }
     
+    private var checkData: CheckResponse?
+    
     var myAllCount = 0
     
     private let checkListLabel = UILabel()
@@ -34,6 +36,11 @@ final class CheckViewController: BaseViewController {
     
     private let checkTableView = UITableView(frame: .zero, style: .grouped)
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        requestCheckAPI()
+    }
     override func setUI() {
         view.backgroundColor = .white
         
@@ -155,6 +162,16 @@ final class CheckViewController: BaseViewController {
         self.present(safariViewController, animated: true)
     }
     
+    func requestCheckAPI() {
+        CheckAPI.shared.getCheck(completion: { result in
+            guard let result = self.validateResult(result) as? CheckResponse else {
+                print("🍎🍎🍎🍎🍎🍎🍎🍎")
+                return
+            }
+            print("🍏🍏🍏🍏🍏🍏🍏")
+            self.checkData = result
+        })
+    }
 }
 
 extension CheckViewController: UITableViewDelegate, UITableViewDataSource {

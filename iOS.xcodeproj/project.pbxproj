@@ -27,6 +27,9 @@
 		D263D8CC2A196D4F002BEEF5 /* PayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8CB2A196D4F002BEEF5 /* PayModel.swift */; };
 		D263D8CE2A196DC7002BEEF5 /* PayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8CD2A196DC7002BEEF5 /* PayService.swift */; };
 		D263D8D02A196DD1002BEEF5 /* PayAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8CF2A196DD1002BEEF5 /* PayAPI.swift */; };
+		D263D8D52A198BDA002BEEF5 /* CheckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8D42A198BD9002BEEF5 /* CheckModel.swift */; };
+		D263D8D82A198C62002BEEF5 /* CheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8D72A198C62002BEEF5 /* CheckService.swift */; };
+		D263D8DA2A198CC1002BEEF5 /* CheckAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8D92A198CC1002BEEF5 /* CheckAPI.swift */; };
 		D294E2962A17D55B001E74F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294E2952A17D55B001E74F1 /* AppDelegate.swift */; };
 		D294E2982A17D55B001E74F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294E2972A17D55B001E74F1 /* SceneDelegate.swift */; };
 		D294E29A2A17D55B001E74F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294E2992A17D55B001E74F1 /* ViewController.swift */; };
@@ -83,6 +86,9 @@
 		D263D8CB2A196D4F002BEEF5 /* PayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayModel.swift; sourceTree = "<group>"; };
 		D263D8CD2A196DC7002BEEF5 /* PayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayService.swift; sourceTree = "<group>"; };
 		D263D8CF2A196DD1002BEEF5 /* PayAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayAPI.swift; sourceTree = "<group>"; };
+		D263D8D42A198BD9002BEEF5 /* CheckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckModel.swift; sourceTree = "<group>"; };
+		D263D8D72A198C62002BEEF5 /* CheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckService.swift; sourceTree = "<group>"; };
+		D263D8D92A198CC1002BEEF5 /* CheckAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAPI.swift; sourceTree = "<group>"; };
 		D294E2922A17D55B001E74F1 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D294E2952A17D55B001E74F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D294E2972A17D55B001E74F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				2AB74F812A190DEF005D5932 /* Check.swift */,
+				D263D8D42A198BD9002BEEF5 /* CheckModel.swift */,
 			);
 			path = Check;
 			sourceTree = "<group>";
@@ -243,6 +250,15 @@
 			path = Pay;
 			sourceTree = "<group>";
 		};
+		D263D8D62A198C55002BEEF5 /* Check */ = {
+			isa = PBXGroup;
+			children = (
+				D263D8D72A198C62002BEEF5 /* CheckService.swift */,
+				D263D8D92A198CC1002BEEF5 /* CheckAPI.swift */,
+			);
+			path = Check;
+			sourceTree = "<group>";
+		};
 		D294E2892A17D55B001E74F1 = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +324,7 @@
 		D294E2BB2A17DBFD001E74F1 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				D263D8D62A198C55002BEEF5 /* Check */,
 				D263D8C92A196D39002BEEF5 /* Pay */,
 				D263D8C42A1964C6002BEEF5 /* Home */,
 				D294E2BC2A17DC43001E74F1 /* Foundation */,
@@ -488,6 +505,7 @@
 				D263D8B22A18F883002BEEF5 /* HomeViewController.swift in Sources */,
 				D24F42662A18C94B00487260 /* UIFont+.swift in Sources */,
 				1D5962882A192CE30050979A /* HomeView.swift in Sources */,
+				D263D8D52A198BDA002BEEF5 /* CheckModel.swift in Sources */,
 				14DDCF732A193D3F00CF2DFD /* PayResultView.swift in Sources */,
 				D263D8CC2A196D4F002BEEF5 /* PayModel.swift in Sources */,
 				2AB74F822A190DEF005D5932 /* Check.swift in Sources */,
@@ -508,6 +526,7 @@
 				D294E2E62A17DF17001E74F1 /* UIImageView+.swift in Sources */,
 				D294E2CA2A17DD11001E74F1 /* AlamofireLogger.swift in Sources */,
 				D294E2E82A17DF2F001E74F1 /* UITableHeaderFooterView+.swift in Sources */,
+				D263D8D82A198C62002BEEF5 /* CheckService.swift in Sources */,
 				D294E29A2A17D55B001E74F1 /* ViewController.swift in Sources */,
 				D263D8A92A18F813002BEEF5 /* TabbarViewController.swift in Sources */,
 				D263D8C82A1964DC002BEEF5 /* HomeAPI.swift in Sources */,
@@ -522,6 +541,7 @@
 				D294E2C62A17DCE5001E74F1 /* NetworkResult.swift in Sources */,
 				D263D8C32A196491002BEEF5 /* HomeModel.swift in Sources */,
 				D294E2E02A17DED6001E74F1 /* UIColor+.swift in Sources */,
+				D263D8DA2A198CC1002BEEF5 /* CheckAPI.swift in Sources */,
 				D294E2E42A17DEFB001E74F1 /* UIButton+.swift in Sources */,
 				D294E2EF2A17DFAE001E74F1 /* Image.swift in Sources */,
 				D263D8D02A196DD1002BEEF5 /* PayAPI.swift in Sources */,
