@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D5962882A192CE30050979A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5962872A192CE30050979A /* HomeView.swift */; };
 		2AB74F822A190DEF005D5932 /* Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB74F812A190DEF005D5932 /* Check.swift */; };
 		2AB74F842A191175005D5932 /* CheckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB74F832A191175005D5932 /* CheckTableViewCell.swift */; };
 		D24F42662A18C94B00487260 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F42652A18C94B00487260 /* UIFont+.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D5962872A192CE30050979A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2AB74F812A190DEF005D5932 /* Check.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check.swift; sourceTree = "<group>"; };
 		2AB74F832A191175005D5932 /* CheckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTableViewCell.swift; sourceTree = "<group>"; };
 		D24F42652A18C94B00487260 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -109,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D5962862A192CD60050979A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D5962872A192CE30050979A /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2AB74F802A190DE0005D5932 /* Check */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +139,7 @@
 		D263D8AA2A18F83B002BEEF5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1D5962862A192CD60050979A /* View */,
 				D263D8B12A18F883002BEEF5 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -389,6 +400,7 @@
 				D263D8B02A18F879002BEEF5 /* PayViewController.swift in Sources */,
 				D263D8B22A18F883002BEEF5 /* HomeViewController.swift in Sources */,
 				D24F42662A18C94B00487260 /* UIFont+.swift in Sources */,
+				1D5962882A192CE30050979A /* HomeView.swift in Sources */,
 				2AB74F822A190DEF005D5932 /* Check.swift in Sources */,
 				D294E2F12A17DFCA001E74F1 /* URLs.swift in Sources */,
 				D294E2EC2A17DF5A001E74F1 /* UICollectionReusableView+.swift in Sources */,
