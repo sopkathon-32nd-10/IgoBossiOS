@@ -101,6 +101,7 @@ class PayView: UIView {
             $0.setTitle("계산하기", for: .normal)
             $0.setTitleColor(.soptGrey000, for: .normal)
             $0.backgroundColor = .yellow
+            $0.makeCornerRadius(ratio: 10)
         }
     }
     
@@ -121,7 +122,7 @@ class PayView: UIView {
     private func layout() {
         titleLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(36)
-            $0.top.equalTo(self.safeAreaInsets).offset(47)
+            $0.top.equalToSuperview().offset(91)
         }
         subTitleLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(36)
