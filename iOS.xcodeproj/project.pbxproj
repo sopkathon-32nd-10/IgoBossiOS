@@ -16,6 +16,7 @@
 		D263D8AE2A18F86C002BEEF5 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8AD2A18F86C002BEEF5 /* CheckViewController.swift */; };
 		D263D8B02A18F879002BEEF5 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8AF2A18F879002BEEF5 /* PayViewController.swift */; };
 		D263D8B22A18F883002BEEF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8B12A18F883002BEEF5 /* HomeViewController.swift */; };
+		D263D8BE2A1931AB002BEEF5 /* PayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8BD2A1931AB002BEEF5 /* PayView.swift */; };
 		D294E2962A17D55B001E74F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294E2952A17D55B001E74F1 /* AppDelegate.swift */; };
 		D294E2982A17D55B001E74F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294E2972A17D55B001E74F1 /* SceneDelegate.swift */; };
 		D294E29A2A17D55B001E74F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294E2992A17D55B001E74F1 /* ViewController.swift */; };
@@ -61,6 +62,7 @@
 		D263D8AD2A18F86C002BEEF5 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
 		D263D8AF2A18F879002BEEF5 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		D263D8B12A18F883002BEEF5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D263D8BD2A1931AB002BEEF5 /* PayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayView.swift; sourceTree = "<group>"; };
 		D294E2922A17D55B001E74F1 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D294E2952A17D55B001E74F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D294E2972A17D55B001E74F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		D263D8AB2A18F843002BEEF5 /* Pay */ = {
 			isa = PBXGroup;
 			children = (
+				D263D8BC2A19319F002BEEF5 /* View */,
 				D263D8AF2A18F879002BEEF5 /* PayViewController.swift */,
 			);
 			path = Pay;
@@ -149,6 +152,14 @@
 				2AB74F832A191175005D5932 /* CheckTableViewCell.swift */,
 			);
 			path = Check;
+			sourceTree = "<group>";
+		};
+		D263D8BC2A19319F002BEEF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D263D8BD2A1931AB002BEEF5 /* PayView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D294E2892A17D55B001E74F1 = {
@@ -393,6 +404,7 @@
 				D294E2F12A17DFCA001E74F1 /* URLs.swift in Sources */,
 				D294E2EC2A17DF5A001E74F1 /* UICollectionReusableView+.swift in Sources */,
 				D294E2BE2A17DC83001E74F1 /* GenericResponse.swift in Sources */,
+				D263D8BE2A1931AB002BEEF5 /* PayView.swift in Sources */,
 				D294E2DA2A17DE85001E74F1 /* UIViewController+.swift in Sources */,
 				D263D8AE2A18F86C002BEEF5 /* CheckViewController.swift in Sources */,
 				D294E2D82A17DE76001E74F1 /* UIView+.swift in Sources */,
