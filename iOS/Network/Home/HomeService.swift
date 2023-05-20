@@ -10,26 +10,30 @@ import Foundation
 import Alamofire
 
 enum HomeService{
-    case getUserInfo(HomeRequest)
+    case getUserInfo
 }
 
 extension HomeService: BaseTargetType {
+    
     var method: Alamofire.HTTPMethod {
         switch self {
         case .getUserInfo:
             return .get
+        }
     }
     
     var path: String {
         switch self {
-        case .getNowPlaying:
-            return "user"
+        case .getUserInfo:
+            return "user/1"
+        }
     }
     
     var parameters: RequestParams {
         switch self {
-        case .getNowPlaying(let request):
-                return .query(request)
+        case .getUserInfo:
+            return .query(nil)
+        }
     }
 }
 

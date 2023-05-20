@@ -11,6 +11,7 @@ import Then
 final class HomeViewController: BaseViewController {
     
     private let rootView = HomeView()
+    private var userData: HomeResponse?
     
     // MARK: - App Life Cycle
     override func loadView() {
@@ -21,5 +22,21 @@ final class HomeViewController: BaseViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .soptYellow500
+        requestHome()
+    }
+}
+
+extension HomeViewController {
+    func requestHome() {
+        HomeAPI.shared.getUserInfo(completion: { result in
+            guard let result = self.validateResult(result) as? HomeResponse else {
+                print("🦊🦊🦊🦊🦊🦊🦊🦊🦊🦊")
+                print(result)
+                print("🦊🦊🦊🦊🦊🦊🦊🦊🦊🦊")
+                return
+            }
+            self.userData = result
+        })
+
     }
 }
