@@ -117,6 +117,14 @@
 			path = Check;
 			sourceTree = "<group>";
 		};
+		2AB74F852A193067005D5932 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2AB74F832A191175005D5932 /* CheckTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		D24F42672A18CA2500487260 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,8 +153,8 @@
 		D263D8AC2A18F860002BEEF5 /* Check */ = {
 			isa = PBXGroup;
 			children = (
+				2AB74F852A193067005D5932 /* Cell */,
 				D263D8AD2A18F86C002BEEF5 /* CheckViewController.swift */,
-				2AB74F832A191175005D5932 /* CheckTableViewCell.swift */,
 			);
 			path = Check;
 			sourceTree = "<group>";
