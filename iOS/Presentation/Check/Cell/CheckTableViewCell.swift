@@ -108,11 +108,10 @@ final class CheckTableViewCell: UITableViewCell {
         handler?()
     }
     
-    func configureCell(_ check: Check){
-        checkBoxButton.setTitle(check.checkBoxButton, for: .normal)
-        checkListTitle.text = check.title
-        checkListContent.text = check.content
-        isTapped = check.checkTapped
+    func configureCell(_ check: CheckListDatum){
+        checkListTitle.text = check.detail?.title
+        checkListContent.text = check.detail?.content
+        isTapped = check.status ?? false
     }
     
 

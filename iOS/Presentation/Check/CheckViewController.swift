@@ -183,7 +183,7 @@ extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CheckTableViewCell.identifier, for: indexPath) as? CheckTableViewCell else
         {return UITableViewCell()}
         
-        cell.configureCell(dummy[indexPath.row])
+        cell.configureCell(checkData?.checkListData[indexPath.row] ?? CheckListDatum(id: nil, status: nil, detail: nil))
         
         cell.handler = { [weak self] in
             guard let self else { return }

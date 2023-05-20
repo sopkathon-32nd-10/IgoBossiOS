@@ -19,9 +19,9 @@ struct CheckResponse: Codable {
 
 // MARK: - CheckListDatum
 struct CheckListDatum: Codable {
-    let id: Int
-    let status: Bool
-    let detail: Detail
+    let id: Int?
+    let status: Bool?
+    let detail: Detail?
 }
 
 // MARK: - Detail

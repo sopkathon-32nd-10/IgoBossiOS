@@ -27,14 +27,14 @@ class BaseAPI{
             return .pathErr
         }
         
-        guard let realData = try? decoder.decode(object.self, from: data) else {
-            print("✨✨✨✨")
-            print(decodedData)
-            return .decodedErr
-        }
+//        guard let realData = try? decoder.decode(object.self, from: data) else {
+//            print("✨✨✨✨")
+//            print(decodedData)
+//            return .decodedErr
+//        }
         switch statusCode {
         case 200..<205:
-            return .success(realData as Any)
+            return .success(decodedData.data as Any)
         case 400..<500:
             return .requestErr("요청에러") //decodedData.status_message ?? 
         case 500:
