@@ -11,8 +11,12 @@ import SnapKit
 import Then
 
 final class CheckViewController: BaseViewController {
-    
-    private let dummy = Check.dummy()
+        
+    private var dummy = Check.dummy() {
+        didSet {
+            self.checkTableView.reloadData()
+        }
+    }
     
     private let checkListLabel = UILabel()
     private let checkListContent = UILabel()
@@ -127,7 +131,14 @@ extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CheckTableViewCell.identifier, for: indexPath) as? CheckTableViewCell else
         {return UITableViewCell()}
+        
         cell.configureCell(dummy[indexPath.row])
+        
+        cell.handler = { [weak self] in
+            guard let self else { return }
+            self.dummy[indexPath.row].checkTapped.toggle()
+        }
+        
         return cell
     }
     
