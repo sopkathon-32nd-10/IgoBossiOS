@@ -10,6 +10,10 @@
 		D24F42662A18C94B00487260 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F42652A18C94B00487260 /* UIFont+.swift */; };
 		D24F42692A18CA4500487260 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D24F42682A18CA4500487260 /* Pretendard-Bold.otf */; };
 		D24F426B2A18CA5D00487260 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D24F426A2A18CA5D00487260 /* Pretendard-Medium.otf */; };
+		D263D8A92A18F813002BEEF5 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8A82A18F813002BEEF5 /* TabbarViewController.swift */; };
+		D263D8AE2A18F86C002BEEF5 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8AD2A18F86C002BEEF5 /* CheckViewController.swift */; };
+		D263D8B02A18F879002BEEF5 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8AF2A18F879002BEEF5 /* PayViewController.swift */; };
+		D263D8B22A18F883002BEEF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8B12A18F883002BEEF5 /* HomeViewController.swift */; };
 		D294E2962A17D55B001E74F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294E2952A17D55B001E74F1 /* AppDelegate.swift */; };
 		D294E2982A17D55B001E74F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294E2972A17D55B001E74F1 /* SceneDelegate.swift */; };
 		D294E29A2A17D55B001E74F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294E2992A17D55B001E74F1 /* ViewController.swift */; };
@@ -49,6 +53,10 @@
 		D24F42652A18C94B00487260 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		D24F42682A18CA4500487260 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		D24F426A2A18CA5D00487260 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		D263D8A82A18F813002BEEF5 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		D263D8AD2A18F86C002BEEF5 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
+		D263D8AF2A18F879002BEEF5 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		D263D8B12A18F883002BEEF5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D294E2922A17D55B001E74F1 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D294E2952A17D55B001E74F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D294E2972A17D55B001E74F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +114,30 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		D263D8AA2A18F83B002BEEF5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D263D8B12A18F883002BEEF5 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D263D8AB2A18F843002BEEF5 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				D263D8AF2A18F879002BEEF5 /* PayViewController.swift */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		D263D8AC2A18F860002BEEF5 /* Check */ = {
+			isa = PBXGroup;
+			children = (
+				D263D8AD2A18F86C002BEEF5 /* CheckViewController.swift */,
+			);
+			path = Check;
+			sourceTree = "<group>";
+		};
 		D294E2892A17D55B001E74F1 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +192,9 @@
 		D294E2B92A17DBEE001E74F1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D263D8AC2A18F860002BEEF5 /* Check */,
+				D263D8AB2A18F843002BEEF5 /* Pay */,
+				D263D8AA2A18F83B002BEEF5 /* Home */,
 				D294E2D22A17DE19001E74F1 /* Base */,
 			);
 			path = Presentation;
@@ -208,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				D294E2D32A17DE23001E74F1 /* BaseViewController.swift */,
+				D263D8A82A18F813002BEEF5 /* TabbarViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -335,11 +371,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D294E2D42A17DE23001E74F1 /* BaseViewController.swift in Sources */,
+				D263D8B02A18F879002BEEF5 /* PayViewController.swift in Sources */,
+				D263D8B22A18F883002BEEF5 /* HomeViewController.swift in Sources */,
 				D24F42662A18C94B00487260 /* UIFont+.swift in Sources */,
 				D294E2F12A17DFCA001E74F1 /* URLs.swift in Sources */,
 				D294E2EC2A17DF5A001E74F1 /* UICollectionReusableView+.swift in Sources */,
 				D294E2BE2A17DC83001E74F1 /* GenericResponse.swift in Sources */,
 				D294E2DA2A17DE85001E74F1 /* UIViewController+.swift in Sources */,
+				D263D8AE2A18F86C002BEEF5 /* CheckViewController.swift in Sources */,
 				D294E2D82A17DE76001E74F1 /* UIView+.swift in Sources */,
 				D294E2C42A17DCD1001E74F1 /* APIConstants.swift in Sources */,
 				D294E2E22A17DEE8001E74F1 /* UILabel+.swift in Sources */,
@@ -350,6 +389,7 @@
 				D294E2CA2A17DD11001E74F1 /* AlamofireLogger.swift in Sources */,
 				D294E2E82A17DF2F001E74F1 /* UITableHeaderFooterView+.swift in Sources */,
 				D294E29A2A17D55B001E74F1 /* ViewController.swift in Sources */,
+				D263D8A92A18F813002BEEF5 /* TabbarViewController.swift in Sources */,
 				D294E2C22A17DCB7001E74F1 /* BaseAPI.swift in Sources */,
 				D294E2EA2A17DF43001E74F1 /* UICollectionViewCell+.swift in Sources */,
 				D294E2D02A17DD99001E74F1 /* VoidResult.swift in Sources */,
