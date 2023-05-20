@@ -27,7 +27,7 @@ final class CheckViewController: BaseViewController {
     private let achievementText = UILabel()
     private let achievementPercent = UILabel()
     private let achievementRate = UIImageView()
-    private let myAchievementRate = UIView()
+    private let myAchievementRate = UIImageView()
     
     private let myFooterView = UIView()
     private let websiteButton = UIButton()
@@ -68,6 +68,7 @@ final class CheckViewController: BaseViewController {
         
         myAchievementRate.do {
             $0.backgroundColor = .soptYellow300
+            $0.alpha = 0.7
             $0.makeCornerRadius(ratio: 10)
         }
         
@@ -133,7 +134,7 @@ final class CheckViewController: BaseViewController {
         }
         
         checkTableView.snp.makeConstraints {
-            $0.top.equalTo(achievementRate.snp.bottom)
+            $0.top.equalTo(achievementRate.snp.bottom).offset(5)
             $0.leading.trailing.equalToSuperview().inset(36)
             $0.bottom.equalToSuperview()
         }
