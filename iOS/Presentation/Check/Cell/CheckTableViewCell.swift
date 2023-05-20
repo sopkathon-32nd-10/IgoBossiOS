@@ -37,6 +37,7 @@ final class CheckTableViewCell: UITableViewCell {
         
         backGround.do {
             $0.backgroundColor = .soptGrey100
+            $0.makeCornerRadius(ratio: 10)
         }
         
         checkBoxButton.do{

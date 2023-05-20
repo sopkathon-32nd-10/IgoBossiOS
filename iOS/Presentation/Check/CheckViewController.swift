@@ -48,6 +48,7 @@ final class CheckViewController: BaseViewController {
         
         achievementRate.do {
             $0.backgroundColor = .soptGrey100
+            $0.makeCornerRadius(ratio: 10)
         }
         
         checkTableView.do {
