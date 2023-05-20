@@ -6,25 +6,13 @@
 //
 
 import UIKit
-import SnapKit
-import Then
 
+class HomeViewController: BaseViewController {
 
-final class HomeViewController: BaseViewController {
-    
-    private let rootView = HomeView()
-    
-    // MARK: - App Life Cycle
-    
-    override func loadView() {
-        self.view = rootView
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Do any additional setup after loading the view.
     }
-    
-    
-}
 
+
+}
