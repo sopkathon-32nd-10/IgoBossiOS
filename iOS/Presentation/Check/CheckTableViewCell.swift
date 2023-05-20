@@ -10,14 +10,20 @@ import UIKit
 import SnapKit
 import Then
 
+protocol WebsiteButtonAction: AnyObject {
+    func websiteButtonTapped(tag: Int)
+}
+
 final class CheckTableViewCell: UITableViewCell {
     
     static let identifier = "CheckTableViewCell"
+    
+    weak var delegate: WebsiteButtonAction?
 
     private let checkBoxButton = UIButton()
     private let checkListTitle = UILabel()
     private let checkListContent = UILabel()
-    private let websiteButton = UIButton()
+    let websiteButton = UIButton()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super .init(style: style, reuseIdentifier: reuseIdentifier)
@@ -48,6 +54,7 @@ final class CheckTableViewCell: UITableViewCell {
         
         websiteButton.do {
             $0.setTitleColor(.soptGrey500, for: .normal)
+            $0.addTarget(self, action: #selector(websiteButtonTapped), for: .touchUpInside)
         }
         
     }
@@ -90,5 +97,11 @@ final class CheckTableViewCell: UITableViewCell {
         websiteButton.setTitle(check.goWebsiteButton, for: .normal)
         
     }
+    
+    @objc
+    func websiteButtonTapped(sender: UIButton) {
+        delegate?.websiteButtonTapped(tag: sender.tag)
+    }
+    
 
 }
