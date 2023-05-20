@@ -99,8 +99,7 @@ final class CheckTableViewCell: UITableViewCell {
     }
     
     func tapped() {
-        let string = isTapped ? "튼" : "버"
-        checkBoxButton.setTitle(string, for: .normal)
+        checkBoxButton.setImage(isTapped ? Image.btnCheck : Image.btnUnCheck, for: .normal)
     }
     
     @objc
