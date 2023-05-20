@@ -24,7 +24,8 @@ final class CheckViewController: BaseViewController {
     private let checkListContent = UILabel()
     private let achievementText = UILabel()
     private let achievementPercent = UILabel()
-    private let achievementRate = UIView()
+    private let achievementRate = UIImageView()
+    private let myAchievementRate = UIView()
     
     private let myFooterView = UIView()
     private let websiteButton = UIButton()
@@ -60,7 +61,11 @@ final class CheckViewController: BaseViewController {
         }
         
         achievementRate.do {
-            $0.backgroundColor = .soptGrey100
+            $0.image = Image.achievementRate
+        }
+        
+        myAchievementRate.do {
+            $0.backgroundColor = .soptYellow300
             $0.makeCornerRadius(ratio: 10)
         }
         
@@ -93,6 +98,7 @@ final class CheckViewController: BaseViewController {
                          achievementText,
                          achievementPercent,
                          achievementRate,
+                         myAchievementRate,
                          checkTableView)
         
         myFooterView.addSubview(websiteButton)
@@ -158,8 +164,7 @@ extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
                 self.myAllCount = self.myAllCount - 1
             }
             
-            print(self.myAllCount)
-            self.achievementRate.snp.remakeConstraints {
+            self.myAchievementRate.snp.remakeConstraints {
                 $0.top.equalTo(self.achievementText.snp.bottom).offset(12)
                 $0.leading.equalToSuperview().inset(36)
                 $0.height.equalTo(24)
@@ -182,7 +187,10 @@ extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        100
+        if section == 0 {
+            return 100
+        } else {
+            return 0
+        }
     }
-    
 }

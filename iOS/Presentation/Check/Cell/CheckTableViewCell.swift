@@ -82,8 +82,8 @@ final class CheckTableViewCell: UITableViewCell {
         }
         
         checkBoxButton.snp.makeConstraints {
-            $0.top.leading.equalToSuperview().inset(10)
-            $0.size.equalTo(24)
+            $0.top.leading.equalToSuperview().inset(14)
+            $0.size.equalTo(20)
         }
         
         checkListTitle.snp.makeConstraints {
@@ -93,7 +93,7 @@ final class CheckTableViewCell: UITableViewCell {
         
         checkListContent.snp.makeConstraints {
             $0.leading.equalTo(checkBoxButton.snp.trailing).offset(14)
-            $0.top.equalTo(checkListTitle.snp.bottom).offset(9)
+            $0.top.equalTo(checkListTitle.snp.bottom).offset(8)
         }
 
     }

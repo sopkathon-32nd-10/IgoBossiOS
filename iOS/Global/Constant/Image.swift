@@ -15,5 +15,6 @@ public enum Image {
     static let check = UIImage(named: "ic_check")!
     static let btnCheck = UIImage(named: "btn_check")!
     static let btnUnCheck = UIImage(named: "btn_unCheck")!
+    static let achievementRate = UIImage(named: "achievementRate")!
 }
     
