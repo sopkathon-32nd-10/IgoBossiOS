@@ -263,15 +263,15 @@ final class HomeView : UIView {
         }
         
         label1.snp.makeConstraints{
-            $0.leading.equalToSuperview().offset(64)
-            $0.top.equalToSuperview().offset(130)
+            $0.leading.equalToSuperview().offset(57)
+            $0.top.equalToSuperview().offset(110)
             
         }
 //        label2.snp.makeConstraints{
 //
 //        }
         label3.snp.makeConstraints{
-            $0.leading.equalToSuperview().offset(64)
+            $0.leading.equalToSuperview().offset(57)
             $0.bottom.equalTo(squareView.snp.top).offset(-15)
         }
         
