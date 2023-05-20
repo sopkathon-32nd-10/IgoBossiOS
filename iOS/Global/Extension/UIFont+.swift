@@ -12,6 +12,10 @@ import UIKit
 extension UIFont{
     
     class var soptHeadLine1: UIFont {
+        return UIFont(name: "Pretendard-Bold", size: 24)!
+    }
+    
+    class var soptHeadLine2: UIFont {
         return UIFont(name: "Pretendard-Bold", size: 20)!
     }
     
@@ -36,7 +40,7 @@ extension UIFont{
     }
     
     class var soptBody3: UIFont {
-        return UIFont(name: "Pretendard-Medium", size: 15)!
+        return UIFont(name: "Pretendard-Medium", size: 12)!
     }
 }
 
