@@ -18,6 +18,8 @@ final class CheckViewController: BaseViewController {
         }
     }
     
+    var myAllCount = 0
+    
     private let checkListLabel = UILabel()
     private let checkListContent = UILabel()
     private let achievementText = UILabel()
@@ -45,7 +47,7 @@ final class CheckViewController: BaseViewController {
         }
         
         achievementText.do {
-            $0.text = "달성률 70%"
+            $0.text = "달성률 0%"
             $0.textColor = .soptGrey400
             $0.font = .soptHeadLine2
         }
@@ -137,8 +139,25 @@ extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
         cell.handler = { [weak self] in
             guard let self else { return }
             self.dummy[indexPath.row].checkTapped.toggle()
+            if self.dummy[indexPath.row].checkTapped {
+                self.myAllCount = self.myAllCount + 1
+
+            } else {
+                self.myAllCount = self.myAllCount - 1
+            }
+            
+            print(self.myAllCount)
+            self.achievementRate.snp.remakeConstraints {
+                $0.top.equalTo(self.achievementText.snp.bottom).offset(12)
+                $0.leading.equalToSuperview().inset(36)
+                $0.height.equalTo(24)
+                $0.width.equalTo(self.myAllCount * 30)
+            }
+            self.achievementText.do {
+                $0.text = "달성률 " + String(self.myAllCount * 10) + "%"
+            }
         }
-        
+                
         return cell
     }
     
