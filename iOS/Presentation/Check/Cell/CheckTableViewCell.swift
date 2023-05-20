@@ -12,6 +12,15 @@ import Then
 
 final class CheckTableViewCell: UITableViewCell {
     
+    var isTapped: Bool = false {
+        didSet {
+            tapped()
+        }
+    }
+    
+    var handler: (() -> (Void))?
+
+
     static let identifier = "CheckTableViewCell"
     
     private let backGround = UIView()
@@ -37,10 +46,14 @@ final class CheckTableViewCell: UITableViewCell {
         
         backGround.do {
             $0.backgroundColor = .soptGrey100
+            $0.makeCornerRadius(ratio: 10)
         }
         
         checkBoxButton.do{
             $0.setTitleColor(.soptGrey500, for: .normal)
+            $0.addTarget(self,
+                         action: #selector(checkBoxButtonTapped),
+                         for: .touchUpInside)
         }
         
         checkListTitle.do{
@@ -82,18 +95,25 @@ final class CheckTableViewCell: UITableViewCell {
             $0.leading.equalTo(checkBoxButton.snp.trailing).offset(14)
             $0.top.equalTo(checkListTitle.snp.bottom).offset(9)
         }
-        
-        
-        
+
+    }
+    
+    func tapped() {
+        let string = isTapped ? "튼" : "버"
+        checkBoxButton.setTitle(string, for: .normal)
+    }
+    
+    @objc
+    func checkBoxButtonTapped() {
+        handler?()
     }
     
     func configureCell(_ check: Check){
         checkBoxButton.setTitle(check.checkBoxButton, for: .normal)
         checkListTitle.text = check.title
         checkListContent.text = check.content
-        
+        isTapped = check.checkTapped
     }
-    
     
 
 }
