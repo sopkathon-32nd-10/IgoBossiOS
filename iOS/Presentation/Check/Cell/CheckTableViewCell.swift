@@ -82,8 +82,7 @@ final class CheckTableViewCell: UITableViewCell {
             $0.leading.equalTo(checkBoxButton.snp.trailing).offset(14)
             $0.top.equalTo(checkListTitle.snp.bottom).offset(9)
         }
-        
-        
+
         
     }
     
