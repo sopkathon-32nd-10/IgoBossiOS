@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D5962842A1920C50050979A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5962832A1920C50050979A /* HomeView.swift */; };
 		2AB74F822A190DEF005D5932 /* Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB74F812A190DEF005D5932 /* Check.swift */; };
 		2AB74F842A191175005D5932 /* CheckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB74F832A191175005D5932 /* CheckTableViewCell.swift */; };
 		D24F42662A18C94B00487260 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F42652A18C94B00487260 /* UIFont+.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D5962832A1920C50050979A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2AB74F812A190DEF005D5932 /* Check.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check.swift; sourceTree = "<group>"; };
 		2AB74F832A191175005D5932 /* CheckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTableViewCell.swift; sourceTree = "<group>"; };
 		D24F42652A18C94B00487260 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -109,6 +111,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D5962812A1911AE0050979A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D5962832A1920C50050979A /* HomeView.swift */,
+			);
+			path = View;
 		2AB74F802A190DE0005D5932 /* Check */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				D263D8B12A18F883002BEEF5 /* HomeViewController.swift */,
+				1D5962812A1911AE0050979A /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -399,6 +408,7 @@
 				D294E2C42A17DCD1001E74F1 /* APIConstants.swift in Sources */,
 				D294E2E22A17DEE8001E74F1 /* UILabel+.swift in Sources */,
 				D294E2C82A17DCFF001E74F1 /* BaseTargetType.swift in Sources */,
+				1D5962842A1920C50050979A /* HomeView.swift in Sources */,
 				D294E2C02A17DC95001E74F1 /* SimpleResponse.swift in Sources */,
 				D294E2CC2A17DD3A001E74F1 /* Config.swift in Sources */,
 				D294E2E62A17DF17001E74F1 /* UIImageView+.swift in Sources */,
