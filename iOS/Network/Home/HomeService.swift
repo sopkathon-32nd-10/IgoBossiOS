@@ -14,6 +14,12 @@ enum HomeService{
 }
 
 extension HomeService: BaseTargetType {
+    var parameters: RequestParams {
+        switch self{
+        case .getUserInfo:
+            return .none
+        }
+    }
     
     var method: Alamofire.HTTPMethod {
         switch self {
@@ -26,13 +32,6 @@ extension HomeService: BaseTargetType {
         switch self {
         case .getUserInfo:
             return "user/1"
-        }
-    }
-    
-    var parameters: RequestParams {
-        switch self {
-        case .getUserInfo:
-            return .query(nil)
         }
     }
 }

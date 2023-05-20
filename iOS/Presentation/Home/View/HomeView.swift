@@ -30,11 +30,10 @@ extension HomeViewController {
     func requestHome() {
         HomeAPI.shared.getUserInfo(completion: { result in
             guard let result = self.validateResult(result) as? HomeResponse else {
-                print("🦊🦊🦊🦊🦊🦊🦊🦊🦊🦊")
-                print(result)
-                print("🦊🦊🦊🦊🦊🦊🦊🦊🦊🦊")
+                print("🍎🍎🍎🍎🍎🍎🍎🍎")
                 return
             }
+            print("🍏🍏🍏🍏🍏🍏🍏")
             self.userData = result
         })
 

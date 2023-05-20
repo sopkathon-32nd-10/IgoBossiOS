@@ -80,6 +80,7 @@ extension PayViewController {
         
         PayAPI.shared.postPayInfo(request: PayRequest(monthOfWage: monthOfWage ?? 0, workingHours: workingHours ?? 0, monthOfWorkingDays: monthOfWorkingDays ?? 0), completion: { result in
             guard let result = self.validateResult(result) as? PayResponse else {
+                print("🙏🙏🙏🙏🙏🙏🙏🙏🙏")
                 return
             }
             self.payInfo = result

@@ -12,10 +12,10 @@ struct HomeRequest: Codable {
 }
 
 struct HomeResponse: Codable {
-    let name: String
-    let birth: String
-    let nationality: String
-    let profileImg: String
-    let workspace: String
-    let workingMonths: Int
+    var name: String?
+    var birth: String?
+    var nationality: String?
+    var profileImg: String?
+    var workspace: String?
+    var workingMonths: Int?
 }

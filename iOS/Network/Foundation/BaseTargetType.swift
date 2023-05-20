@@ -17,7 +17,7 @@ protocol BaseTargetType: URLRequestConvertible {
 }
 
 extension BaseTargetType {
-
+    
     var baseURL: String {
         return "http://15.164.232.187:8080/"
     }
@@ -27,7 +27,7 @@ extension BaseTargetType {
         let url = try baseURL.asURL()
         var urlRequest = try URLRequest(url: url.appendingPathComponent(path), method: method)
         urlRequest.setValue(APIConstants.applicationJSON, forHTTPHeaderField: APIConstants.contentType)
-
+        
         switch parameters {
         case .query(let request):
             let params = request?.toDictionary() ?? [:]
@@ -38,7 +38,11 @@ extension BaseTargetType {
         case .body(let request):
             let params = request?.toDictionary() ?? [:]
             urlRequest.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
+        case .none:
+            break
         }
+        
+        
         return urlRequest
     }
 }
@@ -46,6 +50,7 @@ extension BaseTargetType {
 enum RequestParams {
     case query(_ parameter: Encodable?)
     case body(_ parameter: Encodable?)
+    case none
 }
 
 extension Encodable {
