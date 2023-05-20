@@ -10,8 +10,10 @@ import UIKit
 import SnapKit
 import Then
 
+import SafariServices
+
 final class CheckViewController: BaseViewController {
-        
+    
     private var dummy = Check.dummy() {
         didSet {
             self.checkTableView.reloadData()
@@ -29,7 +31,7 @@ final class CheckViewController: BaseViewController {
     
     private let myFooterView = UIView()
     private let websiteButton = UIButton()
-
+    
     private let checkTableView = UITableView(frame: .zero, style: .grouped)
     
     override func setUI() {
@@ -88,6 +90,7 @@ final class CheckViewController: BaseViewController {
             $0.titleLabel?.textColor = .soptGrey100
             $0.titleLabel?.font = .soptTitle1
             $0.makeCornerRadius(ratio: 10)
+            $0.addTarget(self, action: #selector(websiteButtonClicked), for: .touchUpInside)
         }
         
     }
@@ -141,14 +144,22 @@ final class CheckViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview()
         }
     }
-
+    
+    @objc
+    func websiteButtonClicked() {
+        let url = "https://darkened-cobbler-e17.notion.site/4073508e7c6d4f78925c26d70ecdbf0b"
+        let safariViewController = SFSafariViewController(url: URL(string: url)!)
+        safariViewController.modalPresentationStyle = .fullScreen
+        self.present(safariViewController, animated: true)
+    }
+    
 }
 
 extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dummy.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CheckTableViewCell.identifier, for: indexPath) as? CheckTableViewCell else
         {return UITableViewCell()}
@@ -174,7 +185,7 @@ extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
                 $0.text = String(self.myAllCount * 10) + "%"
             }
         }
-                
+        
         return cell
     }
     
