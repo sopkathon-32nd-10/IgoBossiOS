@@ -23,6 +23,7 @@ final class CheckViewController: BaseViewController {
     private let checkListLabel = UILabel()
     private let checkListContent = UILabel()
     private let achievementText = UILabel()
+    private let achievementPercent = UILabel()
     private let achievementRate = UIView()
     
     private let myFooterView = UIView()
@@ -36,19 +37,25 @@ final class CheckViewController: BaseViewController {
         checkListLabel.do {
             $0.text = "근로기준\n체크리스트"
             $0.numberOfLines = 2
-            $0.textColor = .soptGrey400
+            $0.textColor = .soptGrey600
             $0.font = .soptHeadLine1
         }
         
         checkListContent.do {
             $0.text = "원활한 근로를 위해 필요한 준비물들을 체크해보세요"
-            $0.textColor = .soptGrey400
+            $0.textColor = .soptGrey500
             $0.font = .soptBody3
         }
         
         achievementText.do {
-            $0.text = "달성률 0%"
-            $0.textColor = .soptGrey400
+            $0.text = "달성률"
+            $0.textColor = .soptGrey600
+            $0.font = .soptHeadLine2
+        }
+        
+        achievementPercent.do {
+            $0.text = "0%"
+            $0.textColor = .soptYellow500
             $0.font = .soptHeadLine2
         }
         
@@ -84,6 +91,7 @@ final class CheckViewController: BaseViewController {
         view.addSubviews(checkListLabel,
                          checkListContent,
                          achievementText,
+                         achievementPercent,
                          achievementRate,
                          checkTableView)
         
@@ -102,6 +110,11 @@ final class CheckViewController: BaseViewController {
         achievementText.snp.makeConstraints {
             $0.top.equalTo(checkListLabel.snp.bottom).offset(47)
             $0.leading.equalToSuperview().inset(36)
+        }
+        
+        achievementPercent.snp.makeConstraints {
+            $0.centerY.equalTo(achievementText)
+            $0.leading.equalTo(achievementText.snp.trailing).offset(10)
         }
         
         achievementRate.snp.makeConstraints {
@@ -141,7 +154,6 @@ extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
             self.dummy[indexPath.row].checkTapped.toggle()
             if self.dummy[indexPath.row].checkTapped {
                 self.myAllCount = self.myAllCount + 1
-
             } else {
                 self.myAllCount = self.myAllCount - 1
             }
@@ -153,8 +165,8 @@ extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
                 $0.height.equalTo(24)
                 $0.width.equalTo(self.myAllCount * 30)
             }
-            self.achievementText.do {
-                $0.text = "달성률 " + String(self.myAllCount * 10) + "%"
+            self.achievementPercent.do {
+                $0.text = String(self.myAllCount * 10) + "%"
             }
         }
                 

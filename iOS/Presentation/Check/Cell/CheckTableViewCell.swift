@@ -25,7 +25,7 @@ final class CheckTableViewCell: UITableViewCell {
     
     private let backGround = UIView()
     
-    private let checkBoxButton = UIButton()
+    let checkBoxButton = UIButton()
     private let checkListTitle = UILabel()
     private let checkListContent = UILabel()
         
@@ -45,7 +45,7 @@ final class CheckTableViewCell: UITableViewCell {
         selectionStyle = .none
         
         backGround.do {
-            $0.backgroundColor = .soptGrey100
+            $0.backgroundColor = .soptYellow000
             $0.makeCornerRadius(ratio: 10)
         }
         
@@ -57,12 +57,12 @@ final class CheckTableViewCell: UITableViewCell {
         }
         
         checkListTitle.do{
-            $0.textColor = .soptGrey400
+            $0.textColor = .soptGrey600
             $0.font = .soptTitle2
         }
         
         checkListContent.do {
-            $0.textColor = .soptGrey400
+            $0.textColor = .soptGrey500
             $0.font = .soptBody3
             $0.numberOfLines = 2
         }
@@ -100,6 +100,7 @@ final class CheckTableViewCell: UITableViewCell {
     
     func tapped() {
         checkBoxButton.setImage(isTapped ? Image.btnCheck : Image.btnUnCheck, for: .normal)
+        backGround.backgroundColor = isTapped ? .soptYellow200 : .soptYellow000
     }
     
     @objc
