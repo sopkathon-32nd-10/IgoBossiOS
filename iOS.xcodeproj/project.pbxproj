@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		14DDCF6D2A191B0D00CF2DFD /* PayResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDCF6C2A191B0D00CF2DFD /* PayResultView.swift */; };
 		14DDCF6F2A1930C800CF2DFD /* PayResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDCF6E2A1930C800CF2DFD /* PayResultViewController.swift */; };
+		1D5962882A192CE30050979A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5962872A192CE30050979A /* HomeView.swift */; };
+		2AB74F822A190DEF005D5932 /* Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB74F812A190DEF005D5932 /* Check.swift */; };
+		2AB74F842A191175005D5932 /* CheckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB74F832A191175005D5932 /* CheckTableViewCell.swift */; };
 		D24F42662A18C94B00487260 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F42652A18C94B00487260 /* UIFont+.swift */; };
 		D24F42692A18CA4500487260 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D24F42682A18CA4500487260 /* Pretendard-Bold.otf */; };
 		D24F426B2A18CA5D00487260 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D24F426A2A18CA5D00487260 /* Pretendard-Medium.otf */; };
@@ -16,6 +20,7 @@
 		D263D8AE2A18F86C002BEEF5 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8AD2A18F86C002BEEF5 /* CheckViewController.swift */; };
 		D263D8B02A18F879002BEEF5 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8AF2A18F879002BEEF5 /* PayViewController.swift */; };
 		D263D8B22A18F883002BEEF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8B12A18F883002BEEF5 /* HomeViewController.swift */; };
+		D263D8BE2A1931AB002BEEF5 /* PayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8BD2A1931AB002BEEF5 /* PayView.swift */; };
 		D294E2962A17D55B001E74F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294E2952A17D55B001E74F1 /* AppDelegate.swift */; };
 		D294E2982A17D55B001E74F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294E2972A17D55B001E74F1 /* SceneDelegate.swift */; };
 		D294E29A2A17D55B001E74F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D294E2992A17D55B001E74F1 /* ViewController.swift */; };
@@ -52,8 +57,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+
 		14DDCF6C2A191B0D00CF2DFD /* PayResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayResultView.swift; sourceTree = "<group>"; };
 		14DDCF6E2A1930C800CF2DFD /* PayResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayResultViewController.swift; sourceTree = "<group>"; };
+		1D5962872A192CE30050979A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2AB74F812A190DEF005D5932 /* Check.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check.swift; sourceTree = "<group>"; };
+		2AB74F832A191175005D5932 /* CheckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTableViewCell.swift; sourceTree = "<group>"; };
 		D24F42652A18C94B00487260 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		D24F42682A18CA4500487260 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		D24F426A2A18CA5D00487260 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -61,6 +70,7 @@
 		D263D8AD2A18F86C002BEEF5 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
 		D263D8AF2A18F879002BEEF5 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		D263D8B12A18F883002BEEF5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D263D8BD2A1931AB002BEEF5 /* PayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayView.swift; sourceTree = "<group>"; };
 		D294E2922A17D55B001E74F1 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D294E2952A17D55B001E74F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D294E2972A17D55B001E74F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,14 +119,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+
 		14DDCF6B2A191AD600CF2DFD /* View */ = {
 			isa = PBXGroup;
 			children = (
 				14DDCF6C2A191B0D00CF2DFD /* PayResultView.swift */,
+
+		1D5962862A192CD60050979A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D5962872A192CE30050979A /* HomeView.swift */,
+
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
+
+
+		2AB74F802A190DE0005D5932 /* Check */ = {
+			isa = PBXGroup;
+			children = (
+				2AB74F812A190DEF005D5932 /* Check.swift */,
+			);
+			path = Check;
+			sourceTree = "<group>";
+		};
+		2AB74F852A193067005D5932 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2AB74F832A191175005D5932 /* CheckTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+
 		D24F42672A18CA2500487260 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +165,7 @@
 		D263D8AA2A18F83B002BEEF5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1D5962862A192CD60050979A /* View */,
 				D263D8B12A18F883002BEEF5 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -137,7 +174,11 @@
 		D263D8AB2A18F843002BEEF5 /* Pay */ = {
 			isa = PBXGroup;
 			children = (
+
 				14DDCF6B2A191AD600CF2DFD /* View */,
+
+				D263D8BC2A19319F002BEEF5 /* View */,
+
 				D263D8AF2A18F879002BEEF5 /* PayViewController.swift */,
 				14DDCF6E2A1930C800CF2DFD /* PayResultViewController.swift */,
 			);
@@ -147,9 +188,18 @@
 		D263D8AC2A18F860002BEEF5 /* Check */ = {
 			isa = PBXGroup;
 			children = (
+				2AB74F852A193067005D5932 /* Cell */,
 				D263D8AD2A18F86C002BEEF5 /* CheckViewController.swift */,
 			);
 			path = Check;
+			sourceTree = "<group>";
+		};
+		D263D8BC2A19319F002BEEF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D263D8BD2A1931AB002BEEF5 /* PayView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D294E2892A17D55B001E74F1 = {
@@ -240,6 +290,7 @@
 		D294E2CD2A17DD82001E74F1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				2AB74F802A190DE0005D5932 /* Check */,
 				D294E2CE2A17DD8B001E74F1 /* Common */,
 			);
 			path = Data;
@@ -384,13 +435,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AB74F842A191175005D5932 /* CheckTableViewCell.swift in Sources */,
 				D294E2D42A17DE23001E74F1 /* BaseViewController.swift in Sources */,
 				D263D8B02A18F879002BEEF5 /* PayViewController.swift in Sources */,
 				D263D8B22A18F883002BEEF5 /* HomeViewController.swift in Sources */,
 				D24F42662A18C94B00487260 /* UIFont+.swift in Sources */,
+				1D5962882A192CE30050979A /* HomeView.swift in Sources */,
+				2AB74F822A190DEF005D5932 /* Check.swift in Sources */,
 				D294E2F12A17DFCA001E74F1 /* URLs.swift in Sources */,
 				D294E2EC2A17DF5A001E74F1 /* UICollectionReusableView+.swift in Sources */,
 				D294E2BE2A17DC83001E74F1 /* GenericResponse.swift in Sources */,
+				D263D8BE2A1931AB002BEEF5 /* PayView.swift in Sources */,
 				D294E2DA2A17DE85001E74F1 /* UIViewController+.swift in Sources */,
 				D263D8AE2A18F86C002BEEF5 /* CheckViewController.swift in Sources */,
 				D294E2D82A17DE76001E74F1 /* UIView+.swift in Sources */,
