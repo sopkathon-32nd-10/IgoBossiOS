@@ -14,7 +14,7 @@ class TabbarViewController: UITabBarController {
     
     
     //MARK: - Properties
-
+    
     let homeViewController = HomeViewController()
     let payViewController = PayViewController()
     let checkViewController = CheckViewController()
@@ -23,7 +23,7 @@ class TabbarViewController: UITabBarController {
     lazy var payNavigationController = UINavigationController(rootViewController: payViewController)
     lazy var checkNavigationController = UINavigationController(rootViewController: checkViewController)
     
-        
+    
     
     //MARK: - UI Components
     
@@ -31,9 +31,9 @@ class TabbarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        
         setTabBar()
-        setLayout()
+        setStyle()
         setNavigationController()
         setViewController()
         setCornerRadius()
@@ -43,7 +43,7 @@ class TabbarViewController: UITabBarController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
+        
         tabBar.frame.size.height = 100
         tabBar.frame.origin.y = view.frame.height - 100
     }
@@ -58,7 +58,9 @@ class TabbarViewController: UITabBarController {
         tabBar.itemSpacing = 130
     }
     
-    private func setLayout(){
+    private func setStyle(){
+        UITabBar.clearShadow()
+        tabBar.layer.applyShadow(color: .gray, alpha: 0.15, x: 0, y: -2, blur: 4)
     }
     
     private func setCornerRadius(){
