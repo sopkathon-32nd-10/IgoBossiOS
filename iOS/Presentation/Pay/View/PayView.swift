@@ -54,10 +54,9 @@ class PayView: UIView {
         }
         
         subTitleLabel.do {
-            $0.text = "근로기준에 적합한 임금과 \n근무시간인지 확인해드릴게요."
+            $0.text = "적합한 임금과 근무시간인지 확인해드릴게요."
             $0.textColor = .soptGrey500
             $0.font = .soptBody3
-            $0.numberOfLines = 2
             $0.textAlignment = .left
         }
         
@@ -70,8 +69,11 @@ class PayView: UIView {
         
         payTextField.do {
             $0.placeholder = "원"
-            $0.textColor = .black
+            $0.attributedPlaceholder = NSAttributedString(string: "원", attributes: [NSAttributedString.Key.foregroundColor : UIColor.soptGrey400])
+            $0.backgroundColor = .soptGrey000
+            $0.textColor = .soptGrey600
             $0.makeCornerRadius(ratio: 10)
+            $0.addLeftPadding(inset: 18)
             $0.makeCornerBorder(borderWidth: 1, borderColor: .soptGrey300)
         }
         
@@ -81,9 +83,14 @@ class PayView: UIView {
             $0.font = .soptTitle2
             $0.textAlignment = .left
         }
+        
         workTimeTextField.do {
             $0.placeholder = "시간"
+            $0.attributedPlaceholder = NSAttributedString(string: "시간", attributes: [NSAttributedString.Key.foregroundColor : UIColor.soptGrey400])
+            $0.backgroundColor = .soptGrey000
+            $0.textColor = .soptGrey600
             $0.makeCornerRadius(ratio: 10)
+            $0.addLeftPadding(inset: 18)
             $0.makeCornerBorder(borderWidth: 1, borderColor: .soptGrey300)
         }
         
@@ -96,14 +103,17 @@ class PayView: UIView {
         
         workDayTextField.do {
             $0.placeholder = "일"
+            $0.attributedPlaceholder = NSAttributedString(string: "일", attributes: [NSAttributedString.Key.foregroundColor : UIColor.soptGrey400])
+            $0.backgroundColor = .soptGrey000
             $0.makeCornerRadius(ratio: 10)
+            $0.addLeftPadding(inset: 18)
             $0.makeCornerBorder(borderWidth: 1, borderColor: .soptGrey300)
         }
         
         calculateButton.do {
             $0.setTitle("계산하기", for: .normal)
-            $0.setTitleColor(.soptGrey000, for: .normal)
-            $0.backgroundColor = .soptGrey500
+            $0.setTitleColor(.soptGrey300, for: .normal)
+            $0.backgroundColor = .soptGrey100
             $0.makeCornerRadius(ratio: 10)
         }
     }

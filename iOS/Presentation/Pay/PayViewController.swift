@@ -46,8 +46,8 @@ class PayViewController: BaseViewController {
 
 extension PayViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.backgroundColor = .yellow
-        textField.makeCornerBorder(borderWidth: 1, borderColor: .yellow)
+        textField.backgroundColor = .soptYellow100
+        textField.makeCornerBorder(borderWidth: 1, borderColor: .soptYellow300)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -66,7 +66,8 @@ extension PayViewController {
             !rootView.workTimeTextField.isEmpty() &&
             !rootView.workDayTextField.isEmpty() {
             
-            rootView.calculateButton.backgroundColor = .yellow
+            rootView.calculateButton.backgroundColor = .soptYellow500
+            rootView.calculateButton.setTitleColor(.soptWhite, for: .normal)
             rootView.calculateButton.isEnabled = true
         }
     }
