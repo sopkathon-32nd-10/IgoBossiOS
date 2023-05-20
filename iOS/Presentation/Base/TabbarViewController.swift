@@ -36,28 +36,24 @@ class TabbarViewController: UITabBarController {
         setLayout()
         setNavigationController()
         setViewController()
-        //setCornerRadius()
+        setCornerRadius()
         selectedIndex = 1
         
     }
     
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//
-//        tabBar.frame.size.height = 96
-//        tabBar.frame.origin.y = view.frame.height - 96
-//
-//    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        tabBar.frame.size.height = 100
+        tabBar.frame.origin.y = view.frame.height - 100
+    }
     
     //MARK: - Custom Method
     
     private func setTabBar(){
-        UITabBar.appearance().shadowImage = UIImage()
-        UITabBar.appearance().backgroundImage = UIImage()
         
         //tabBar.isTranslucent = false
         tabBar.backgroundColor = .white
-        tabBar.tintColor = .black
         tabBar.itemPositioning = .centered
         tabBar.itemSpacing = 130
     }
@@ -65,11 +61,11 @@ class TabbarViewController: UITabBarController {
     private func setLayout(){
     }
     
-//    private func setCornerRadius(){
-//        tabBar.layer.cornerRadius = 24
-//        tabBar.layer.maskedCorners = [.layerMinXMinYCorner,
-//                                      .layerMaxXMinYCorner]
-//    }
+    private func setCornerRadius(){
+        tabBar.layer.cornerRadius = 20
+        tabBar.layer.maskedCorners = [.layerMinXMinYCorner,
+                                      .layerMaxXMinYCorner]
+    }
     
     private func setNavigationController() {
         homeNavigationContrller.setNavigationBarHidden(true, animated: true)
@@ -79,11 +75,11 @@ class TabbarViewController: UITabBarController {
     
     private func setViewController(){
         
-        homeNavigationContrller.tabBarItem = UITabBarItem(title: "홈", image: nil, tag: 0)
-        payNavigationController.tabBarItem = UITabBarItem(title: "임금", image: nil, tag: 1)
-        checkNavigationController.tabBarItem = UITabBarItem(title: "체크", image: nil, tag: 2)
+        payNavigationController.tabBarItem = UITabBarItem(title: nil, image: Image.calculate, selectedImage: Image.calculate)
+        homeNavigationContrller.tabBarItem = UITabBarItem(title: nil, image: Image.home, selectedImage: Image.home)
+        checkNavigationController.tabBarItem = UITabBarItem(title: nil, image: Image.check, selectedImage: Image.check)
         
-        viewControllers = [homeNavigationContrller,payNavigationController,checkNavigationController]
+        viewControllers = [payNavigationController,homeNavigationContrller,checkNavigationController]
     }
 }
 
