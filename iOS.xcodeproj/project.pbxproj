@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14DDCF6D2A191B0D00CF2DFD /* PayResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDCF6C2A191B0D00CF2DFD /* PayResultView.swift */; };
+		14DDCF6F2A1930C800CF2DFD /* PayResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDCF6E2A1930C800CF2DFD /* PayResultViewController.swift */; };
 		D24F42662A18C94B00487260 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F42652A18C94B00487260 /* UIFont+.swift */; };
 		D24F42692A18CA4500487260 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D24F42682A18CA4500487260 /* Pretendard-Bold.otf */; };
 		D24F426B2A18CA5D00487260 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D24F426A2A18CA5D00487260 /* Pretendard-Medium.otf */; };
@@ -50,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14DDCF6C2A191B0D00CF2DFD /* PayResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayResultView.swift; sourceTree = "<group>"; };
+		14DDCF6E2A1930C800CF2DFD /* PayResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayResultViewController.swift; sourceTree = "<group>"; };
 		D24F42652A18C94B00487260 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		D24F42682A18CA4500487260 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		D24F426A2A18CA5D00487260 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -105,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14DDCF6B2A191AD600CF2DFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14DDCF6C2A191B0D00CF2DFD /* PayResultView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D24F42672A18CA2500487260 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +137,9 @@
 		D263D8AB2A18F843002BEEF5 /* Pay */ = {
 			isa = PBXGroup;
 			children = (
+				14DDCF6B2A191AD600CF2DFD /* View */,
 				D263D8AF2A18F879002BEEF5 /* PayViewController.swift */,
+				14DDCF6E2A1930C800CF2DFD /* PayResultViewController.swift */,
 			);
 			path = Pay;
 			sourceTree = "<group>";
@@ -384,11 +398,13 @@
 				D294E2E22A17DEE8001E74F1 /* UILabel+.swift in Sources */,
 				D294E2C82A17DCFF001E74F1 /* BaseTargetType.swift in Sources */,
 				D294E2C02A17DC95001E74F1 /* SimpleResponse.swift in Sources */,
+				14DDCF6F2A1930C800CF2DFD /* PayResultViewController.swift in Sources */,
 				D294E2CC2A17DD3A001E74F1 /* Config.swift in Sources */,
 				D294E2E62A17DF17001E74F1 /* UIImageView+.swift in Sources */,
 				D294E2CA2A17DD11001E74F1 /* AlamofireLogger.swift in Sources */,
 				D294E2E82A17DF2F001E74F1 /* UITableHeaderFooterView+.swift in Sources */,
 				D294E29A2A17D55B001E74F1 /* ViewController.swift in Sources */,
+				14DDCF6D2A191B0D00CF2DFD /* PayResultView.swift in Sources */,
 				D263D8A92A18F813002BEEF5 /* TabbarViewController.swift in Sources */,
 				D294E2C22A17DCB7001E74F1 /* BaseAPI.swift in Sources */,
 				D294E2EA2A17DF43001E74F1 /* UICollectionViewCell+.swift in Sources */,
