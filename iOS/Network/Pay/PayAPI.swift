@@ -18,7 +18,7 @@ class PayAPI: BaseAPI {
 extension PayAPI{
     
     public func postPayInfo(request: PayRequest, completion: @escaping (NetworkResult<Any>) -> Void) {
-        AFManager.request(HomeService.getUserInfo).responseData { response in
+        AFManager.request(PayService.postPayInfo(request)).responseData { response in
             self.disposeNetwork(response,
                                 dataModel: PayResponse.self,
                                 completion: completion)

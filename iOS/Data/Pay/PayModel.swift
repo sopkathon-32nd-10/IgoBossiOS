@@ -14,9 +14,9 @@ struct PayRequest: Codable {
 }
 
 struct PayResponse: Codable {
-    let stdResult: String
-    let workingHoursStd: String
-    let workingHours: String
-    let wageStd: String
-    let wage: String
+    let stdResult: Bool
+    let workingHoursStd: Bool
+    let workingHours: Int
+    let wageStd: Bool
+    let wage: Int
 }

@@ -26,15 +26,9 @@ class BaseAPI{
         else {
             return .pathErr
         }
-        
-        guard let realData = try? decoder.decode(object.self, from: data) else {
-            return .decodedErr
-        }
-        
-        print(realData)
         switch statusCode {
         case 200..<205:
-            return .success(realData as Any)
+            return .success(decodedData as Any)
         case 400..<500:
             return .requestErr("요청에러") //decodedData.status_message ?? 
         case 500:
