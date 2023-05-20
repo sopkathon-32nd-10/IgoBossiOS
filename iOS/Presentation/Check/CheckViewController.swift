@@ -22,6 +22,7 @@ final class CheckViewController: BaseViewController {
             $0.separatorStyle = .none
             $0.backgroundColor = .soptGrey200
             $0.register(CheckTableViewCell.self, forCellReuseIdentifier: CheckTableViewCell.identifier)
+            $0.separatorStyle = .none
             $0.delegate = self
             $0.dataSource = self
         }
