@@ -19,7 +19,7 @@ protocol BaseTargetType: URLRequestConvertible {
 extension BaseTargetType {
 
     var baseURL: String {
-        return Config.baseURL
+        return "http://15.164.232.187:8080/"
     }
     
     // URLRequestConvertible 구현

@@ -12,6 +12,7 @@ class PayViewController: BaseViewController {
     //MARK: - Properties
     
     private let rootView = PayView()
+    private var payInfo: PayResponse?
     
     //MARK: - Life Cycle
     
@@ -39,7 +40,7 @@ class PayViewController: BaseViewController {
     }
     
     @objc func calculateButtonDidTap() {
-        presentToPayResultView()
+        requestPayAPI()
     }
     
 }
@@ -71,6 +72,21 @@ extension PayViewController {
             rootView.calculateButton.isEnabled = true
         }
     }
+    
+    func requestPayAPI() {
+        let monthOfWage = Int(rootView.payTextField.text ?? "")
+        let workingHours = Int(rootView.workTimeTextField.text ?? "")
+        let monthOfWorkingDays = Int(rootView.workDayTextField.text ?? "")
+        
+        PayAPI.shared.postPayInfo(request: PayRequest(monthOfWage: monthOfWage ?? 0, workingHours: workingHours ?? 0, monthOfWorkingDays: monthOfWorkingDays ?? 0), completion: { result in
+            guard let result = self.validateResult(result) as? PayResponse else {
+                return
+            }
+            self.payInfo = result
+            self.presentToPayResultView()
+        })
+    }
+    
     func presentToPayResultView() {
         let payResultViewController = PayResultViewController()
         payResultViewController.modalPresentationStyle = .formSheet
