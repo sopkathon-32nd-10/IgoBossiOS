@@ -41,23 +41,19 @@ class TabbarViewController: UITabBarController {
         
     }
     
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//
-//        tabBar.frame.size.height = 96
-//        tabBar.frame.origin.y = view.frame.height - 96
-//
-//    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        tabBar.frame.size.height = 100
+        tabBar.frame.origin.y = view.frame.height - 100
+    }
     
     //MARK: - Custom Method
     
     private func setTabBar(){
-        UITabBar.appearance().shadowImage = UIImage()
-        UITabBar.appearance().backgroundImage = UIImage()
         
         //tabBar.isTranslucent = false
         tabBar.backgroundColor = .white
-        tabBar.tintColor = .black
         tabBar.itemPositioning = .centered
         tabBar.itemSpacing = 130
     }
@@ -79,10 +75,9 @@ class TabbarViewController: UITabBarController {
     
     private func setViewController(){
         
-
-        payNavigationController.tabBarItem = UITabBarItem(title: "임금", image: nil, tag: 0)
-        homeNavigationContrller.tabBarItem = UITabBarItem(title: "홈", image: nil, tag: 1)
-        checkNavigationController.tabBarItem = UITabBarItem(title: "체크", image: nil, tag: 2)
+        payNavigationController.tabBarItem = UITabBarItem(title: nil, image: Image.calculate, selectedImage: Image.calculate)
+        homeNavigationContrller.tabBarItem = UITabBarItem(title: nil, image: Image.home, selectedImage: Image.home)
+        checkNavigationController.tabBarItem = UITabBarItem(title: nil, image: Image.check, selectedImage: Image.check)
         
         viewControllers = [payNavigationController,homeNavigationContrller,checkNavigationController]
     }
