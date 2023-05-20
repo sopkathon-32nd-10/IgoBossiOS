@@ -18,9 +18,11 @@ final class CheckViewController: BaseViewController {
     private let checkListContent = UILabel()
     private let achievementText = UILabel()
     private let achievementRate = UIView()
-    private let websiteButton = UIButton()
     
-    private let checkTableView = UITableView()
+    private let myFooterView = UIView()
+    private let websiteButton = UIButton()
+
+    private let checkTableView = UITableView(frame: .zero, style: .grouped)
     
     override func setUI() {
         view.backgroundColor = .white
@@ -57,6 +59,18 @@ final class CheckViewController: BaseViewController {
             $0.dataSource = self
         }
         
+        myFooterView.do {
+            $0.backgroundColor = .white
+        }
+        
+        websiteButton.do {
+            $0.backgroundColor = .soptGrey300
+            $0.setTitle("자세히 보기", for: .normal)
+            $0.titleLabel?.textColor = .soptGrey100
+            $0.titleLabel?.font = .soptTitle1
+            $0.makeCornerRadius(ratio: 10)
+        }
+        
     }
     
     override func setLayout() {
@@ -65,6 +79,8 @@ final class CheckViewController: BaseViewController {
                          achievementText,
                          achievementRate,
                          checkTableView)
+        
+        myFooterView.addSubview(websiteButton)
         
         checkListLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(91)
@@ -87,11 +103,16 @@ final class CheckViewController: BaseViewController {
             $0.height.equalTo(24)
         }
         
-        
         checkTableView.snp.makeConstraints {
-            $0.top.equalTo(achievementRate.snp.bottom).offset(30)
+            $0.top.equalTo(achievementRate.snp.bottom)
             $0.leading.trailing.equalToSuperview().inset(36)
             $0.bottom.equalToSuperview()
+        }
+        
+        websiteButton.snp.makeConstraints {
+            $0.height.equalTo(46)
+            $0.centerY.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
         }
     }
 
@@ -116,4 +137,9 @@ extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return myFooterView
     }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        100
+    }
+    
 }
