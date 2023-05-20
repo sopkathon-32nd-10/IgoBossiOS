@@ -17,12 +17,12 @@ class PayView: UIView {
     private let titleLabel = UILabel()
     private let subTitleLabel = UILabel()
     private let payTitleLabel = UILabel()
-    private let payTextField = UITextField()
+    public let payTextField = UITextField()
     private let workTimeLabel = UILabel()
-    private let workTimeTextField = UITextField()
+    public let workTimeTextField = UITextField()
     private let workDayLabel = UILabel()
-    private let workDayTextField = UITextField()
-    private lazy var calculateButton = UIButton()
+    public let workDayTextField = UITextField()
+    public lazy var calculateButton = UIButton()
     
 
     //MARK: - Life Cycles
@@ -100,7 +100,7 @@ class PayView: UIView {
         calculateButton.do {
             $0.setTitle("계산하기", for: .normal)
             $0.setTitleColor(.soptGrey000, for: .normal)
-            $0.backgroundColor = .yellow
+            $0.backgroundColor = .soptGrey500
             $0.makeCornerRadius(ratio: 10)
         }
     }
