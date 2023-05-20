@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
-		14DDCF6D2A191B0D00CF2DFD /* PayResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDCF6C2A191B0D00CF2DFD /* PayResultView.swift */; };
-		14DDCF6F2A1930C800CF2DFD /* PayResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDCF6E2A1930C800CF2DFD /* PayResultViewController.swift */; };
 		1D5962882A192CE30050979A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5962872A192CE30050979A /* HomeView.swift */; };
 		2AB74F822A190DEF005D5932 /* Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB74F812A190DEF005D5932 /* Check.swift */; };
 		2AB74F842A191175005D5932 /* CheckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB74F832A191175005D5932 /* CheckTableViewCell.swift */; };
@@ -57,9 +54,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-
-		14DDCF6C2A191B0D00CF2DFD /* PayResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayResultView.swift; sourceTree = "<group>"; };
-		14DDCF6E2A1930C800CF2DFD /* PayResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayResultViewController.swift; sourceTree = "<group>"; };
 		1D5962872A192CE30050979A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2AB74F812A190DEF005D5932 /* Check.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check.swift; sourceTree = "<group>"; };
 		2AB74F832A191175005D5932 /* CheckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTableViewCell.swift; sourceTree = "<group>"; };
@@ -119,23 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-
-		14DDCF6B2A191AD600CF2DFD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				14DDCF6C2A191B0D00CF2DFD /* PayResultView.swift */,
-
 		1D5962862A192CD60050979A /* View */ = {
 			isa = PBXGroup;
 			children = (
 				1D5962872A192CE30050979A /* HomeView.swift */,
-
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-
-
 		2AB74F802A190DE0005D5932 /* Check */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +137,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-
 		D24F42672A18CA2500487260 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,13 +158,8 @@
 		D263D8AB2A18F843002BEEF5 /* Pay */ = {
 			isa = PBXGroup;
 			children = (
-
-				14DDCF6B2A191AD600CF2DFD /* View */,
-
 				D263D8BC2A19319F002BEEF5 /* View */,
-
 				D263D8AF2A18F879002BEEF5 /* PayViewController.swift */,
-				14DDCF6E2A1930C800CF2DFD /* PayResultViewController.swift */,
 			);
 			path = Pay;
 			sourceTree = "<group>";
@@ -453,13 +432,11 @@
 				D294E2E22A17DEE8001E74F1 /* UILabel+.swift in Sources */,
 				D294E2C82A17DCFF001E74F1 /* BaseTargetType.swift in Sources */,
 				D294E2C02A17DC95001E74F1 /* SimpleResponse.swift in Sources */,
-				14DDCF6F2A1930C800CF2DFD /* PayResultViewController.swift in Sources */,
 				D294E2CC2A17DD3A001E74F1 /* Config.swift in Sources */,
 				D294E2E62A17DF17001E74F1 /* UIImageView+.swift in Sources */,
 				D294E2CA2A17DD11001E74F1 /* AlamofireLogger.swift in Sources */,
 				D294E2E82A17DF2F001E74F1 /* UITableHeaderFooterView+.swift in Sources */,
 				D294E29A2A17D55B001E74F1 /* ViewController.swift in Sources */,
-				14DDCF6D2A191B0D00CF2DFD /* PayResultView.swift in Sources */,
 				D263D8A92A18F813002BEEF5 /* TabbarViewController.swift in Sources */,
 				D294E2C22A17DCB7001E74F1 /* BaseAPI.swift in Sources */,
 				D294E2EA2A17DF43001E74F1 /* UICollectionViewCell+.swift in Sources */,
