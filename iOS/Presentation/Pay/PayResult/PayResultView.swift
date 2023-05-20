@@ -14,25 +14,23 @@ class PayResultView: UIView {
         $0.layer.cornerRadius = 10
     }
     
-    private var backButton = UIButton().then {
+    public var backButton = UIButton().then {
         $0.setImage(UIImage(named: "btn_cancel"), for: .normal)
     }
     
-    private let resultImageView = UIImageView().then {
+    public let resultImageView = UIImageView().then {
         $0.image = UIImage(named: "logo")
     }
     
-    private let warningImage = UIImageView().then {
-        $0.image = UIImage(named: "ic_warning")
-    }
+    public let warningImage = UIImageView()
     
-    private let timeTitle = UILabel().then {
+    public let timeTitle = UILabel().then {
         $0.text = "근로시간"
         $0.font = UIFont.soptTitle2
         $0.textColor = UIColor.soptGrey500
     }
 
-    private let timeLabel = UILabel().then {
+    public let timeLabel = UILabel().then {
         $0.text = "9"
         $0.font = UIFont.soptHeadLine2
         $0.textColor = UIColor.soptGrey600
@@ -44,13 +42,15 @@ class PayResultView: UIView {
         $0.textColor = UIColor.soptGrey500
     }
 
-    private let priceTitle = UILabel().then {
+    public let priceTitle = UILabel().then {
         $0.text = "환산한 시급"
         $0.font = UIFont.soptTitle2
         $0.textColor = UIColor.soptGrey500
     }
+    
+    public let warningImage2 = UIImageView()
 
-    private let priceLabel = UILabel().then {
+    public let priceLabel = UILabel().then {
         $0.text = "8333"
         $0.font = UIFont.soptHeadLine2
         $0.textColor = UIColor.soptGrey600
@@ -97,7 +97,7 @@ class PayResultView: UIView {
 
         addSubview(resultView)
 
-        resultView.addSubviews(backButton, resultImageView, timeTitle, timeLabel, timeunitLabel, warningImage, priceTitle, priceLabel, priceunitLabel, explainView, helpButton)
+        resultView.addSubviews(backButton, resultImageView, timeTitle, timeLabel, timeunitLabel, warningImage, warningImage2, priceTitle, priceLabel, priceunitLabel, explainView, helpButton)
         
         explainView.addSubview(explainLabel)
 
@@ -126,7 +126,7 @@ class PayResultView: UIView {
 
         timeLabel.snp.makeConstraints {
             $0.leading.equalTo(timeTitle.snp.trailing).offset(10)
-            $0.top.equalTo(timeTitle.snp.top)
+            $0.top.equalTo(resultImageView.snp.bottom).offset(36)
         }
 
         timeunitLabel.snp.makeConstraints {
@@ -135,7 +135,7 @@ class PayResultView: UIView {
         }
         
         warningImage.snp.makeConstraints {
-            $0.width.height.equalTo(17)
+            $0.width.height.equalTo(24)
             $0.top.equalTo(priceTitle)
             $0.trailing.equalTo(priceTitle.snp.leading).offset(-5)
         }
@@ -147,7 +147,7 @@ class PayResultView: UIView {
 
         priceLabel.snp.makeConstraints {
             $0.leading.equalTo(priceTitle.snp.trailing).offset(10)
-            $0.top.equalTo(priceTitle.snp.top)
+            $0.centerY.equalTo(priceTitle)
         }
 
         priceunitLabel.snp.makeConstraints {
@@ -170,6 +170,12 @@ class PayResultView: UIView {
             $0.bottom.equalToSuperview().inset(24)
             $0.leading.trailing.equalToSuperview().inset(23)
             $0.height.equalTo(30)
+        }
+        
+        warningImage2.snp.makeConstraints {
+            $0.width.height.equalTo(24)
+            $0.centerY.equalTo(self.timeLabel)
+            $0.leading.equalToSuperview().offset(60)
         }
     }
 

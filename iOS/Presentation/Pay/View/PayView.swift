@@ -78,7 +78,7 @@ class PayView: UIView {
         }
         
         workTimeLabel.do {
-            $0.text = "월급 입력"
+            $0.text = "하루 근무 시간"
             $0.textColor = .soptGrey500
             $0.font = .soptTitle2
             $0.textAlignment = .left
@@ -95,7 +95,7 @@ class PayView: UIView {
         }
         
         workDayLabel.do {
-            $0.text = "월급 입력"
+            $0.text = "한달 근무 일수"
             $0.textColor = .soptGrey500
             $0.font = .soptTitle2
             $0.textAlignment = .left

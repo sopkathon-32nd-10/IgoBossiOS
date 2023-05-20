@@ -6,12 +6,10 @@
       "scale" : "1x"
     },
     {
-      "filename" : "ic_calculate@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ic_calculate@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

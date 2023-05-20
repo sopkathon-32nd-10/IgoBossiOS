@@ -77,9 +77,9 @@ class TabbarViewController: UITabBarController {
     
     private func setViewController(){
         
-        payNavigationController.tabBarItem = UITabBarItem(title: nil, image: Image.calculate, selectedImage: Image.calculate)
-        homeNavigationContrller.tabBarItem = UITabBarItem(title: nil, image: Image.home, selectedImage: Image.home)
-        checkNavigationController.tabBarItem = UITabBarItem(title: nil, image: Image.check, selectedImage: Image.check)
+        payNavigationController.tabBarItem = UITabBarItem(title: nil, image: Image.calculate, selectedImage: Image.selecetedcalculate)
+        homeNavigationContrller.tabBarItem = UITabBarItem(title: nil, image: Image.home, selectedImage: Image.selecetedhome)
+        checkNavigationController.tabBarItem = UITabBarItem(title: nil, image: Image.check, selectedImage: Image.selecetedcheck)
         
         viewControllers = [payNavigationController,homeNavigationContrller,checkNavigationController]
     }

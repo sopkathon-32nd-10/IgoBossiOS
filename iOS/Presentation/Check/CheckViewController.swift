@@ -86,7 +86,7 @@ final class CheckViewController: BaseViewController {
         }
         
         websiteButton.do {
-            $0.backgroundColor = .soptGrey300
+            $0.backgroundColor = .soptYellow500
             $0.setTitle("자세히 보기", for: .normal)
             $0.titleLabel?.textColor = .soptGrey100
             $0.titleLabel?.font = .soptTitle1
