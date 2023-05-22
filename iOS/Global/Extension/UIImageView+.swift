@@ -11,11 +11,7 @@ import Kingfisher
 extension UIImageView{
     func kfSetImage(url : String?){
         
-        guard let url = url else {
-            print("🙏🙏🙏🙏에러🙏🙏🙏🙏")
-            print(url)
-            print("🙏🙏🙏🙏에러🙏🙏🙏🙏")
-            return }
+        guard let url = url else { return }
         
         if let url = URL(string: url) {
             kf.indicatorType = .activity

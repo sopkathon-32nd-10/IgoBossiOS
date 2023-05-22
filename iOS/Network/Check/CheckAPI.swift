@@ -24,6 +24,14 @@ extension CheckAPI{
                                 completion: completion)
         }
     }
+    
+    public func patchCheck(query: CheckRequest, body: Check, completion: @escaping (NetworkResult<Any>) -> Void) {
+        AFManager.request(CheckService.patchCheck(query, body)).responseData { response in
+            self.disposeNetwork(response,
+                                dataModel: SimpleResponse.self,
+                                completion: completion)
+        }
+    }
 }
 
 

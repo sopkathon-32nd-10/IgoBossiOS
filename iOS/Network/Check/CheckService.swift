@@ -11,6 +11,7 @@ import Alamofire
 
 enum CheckService{
     case getCheck(CheckRequest)
+    case patchCheck(CheckRequest, Check)
 }
 
 extension CheckService: BaseTargetType {
@@ -19,12 +20,16 @@ extension CheckService: BaseTargetType {
         switch self {
         case .getCheck:
             return .get
+        case .patchCheck(_, _):
+            return .patch
         }
     }
     
     var path: String {
         switch self {
         case .getCheck:
+            return "checklist"
+        case .patchCheck(_, _):
             return "checklist"
         }
     }
@@ -33,6 +38,8 @@ extension CheckService: BaseTargetType {
         switch self {
         case .getCheck(let request):
             return .query(request)
+        case .patchCheck(let query, let body):
+            return .both(query, body)
         }
     }
 }

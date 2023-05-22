@@ -10,8 +10,7 @@ import UIKit
 class PayResultViewController: UIViewController {
 
     let testView = PayResultView()
-    var payTrue: Bool = true
-    var timeTrue: Bool = true
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,33 +41,29 @@ extension PayResultViewController {
         }
     }
     
-    public func dataBind(pay: String, time: String) {
-        testView.priceLabel.text = pay
-        testView.timeLabel.text = time
-
-        if (Int(pay) ?? 0 < 10000) {
-            testView.warningImage2.image = Image.warning
-            self.payTrue = false
-        }
+    public func dataBind(_ payResult: PayResponse?) {
+        guard let payResult = payResult else { return }
+        testView.priceLabel.text = String(payResult.wage)
+        testView.timeLabel.text = String(payResult.workingHours)
         
-        if (Int(time) ?? 0 > 8 ) {
-            self.timeTrue = false
-            testView.warningImage.image = Image.warning
-        }
-        
-        if timeTrue {
-            if payTrue {
-                testView.resultImageView.image = Image.logo
+        if !payResult.wageStd {
+            if !payResult.workingHoursStd {
+                testView.warningImage2.image = Image.warning
+                testView.warningImage.image = Image.warning
+                testView.resultImageView.image = Image.sadLogo
             } else {
+                testView.warningImage.image = Image.warning
                 testView.resultImageView.image = Image.littleSadLogo
             }
         } else {
-            if payTrue {
+            if !payResult.workingHoursStd {
+                testView.warningImage2.image = Image.warning
                 testView.resultImageView.image = Image.littleSadLogo
             } else {
-                testView.resultImageView.image = Image.sadLogo
+                testView.resultImageView.image = Image.logo
             }
         }
+        
     }
 }
 

@@ -77,6 +77,7 @@ class BaseAPI{
                 completion(networkResult)
             } else {
                 let networkResult = self.judgeSimpleResponseStatus(by: statusCode, data)
+                print("🦈🦈🦈🦈🦈🦈")
                 completion(networkResult)
             }
         case .failure(let error):
