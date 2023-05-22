@@ -19,22 +19,22 @@ final class HomeView : UIView {
     private let squareView2 = UIView()
     private let squareView3 = UIView()
 //    private lazy var bannerLabel = UILabel()
-    private let workingStatus = UIButton()
-    private lazy var name = UILabel()
-    private lazy var birthday = UILabel()
-    private lazy var country = UILabel()
+    public let workingStatus = UIButton()
+    public lazy var name = UILabel()
+    public lazy var birthday = UILabel()
+    public lazy var country = UILabel()
     private let at = UILabel()
     private let ing = UILabel()
-    private let circleImg = UIImageView()
+    public let circleImg = UIImageView()
     
-    private let label1 = UILabel()
+    public let label1 = UILabel()
     private let label2 = UILabel()
     private let label3 = UILabel()
     
-    private let place = UILabel()
-    private let time = UILabel()
+    public let place = UILabel()
+    public let time = UILabel()
 
-    private let realname = UILabel()
+    public let realname = UILabel()
     
     //MARK: - Life Cycles
     
@@ -63,8 +63,7 @@ final class HomeView : UIView {
         //            $0.layer.shadowOpacity = 0.3 // alpha값입니다.
         //        }
         icon.do {
-            $0.backgroundColor = .soptWhite
-            $0.image = UIImage(named: "logo")
+            $0.image = Image.smallLogo
         }
         squareView.do {
             $0.backgroundColor = UIColor.soptWhite
@@ -107,17 +106,14 @@ final class HomeView : UIView {
             $0.font = UIFont.boldSystemFont(ofSize: 20)
         }
         realname.do{
-            $0.text = "오스틴 우다바"
             $0.textColor = .soptGrey600
             $0.font = UIFont.soptHeadLine1
         }
         birthday.do {
-            $0.text = "1972년생 02월 26일"
             $0.textColor = .soptGrey500
             $0.font = UIFont.soptTitle2
         }
         country.do {
-            $0.text = "나이아지리아(Nigeria)"
             $0.textColor = .soptGrey500
             $0.font = UIFont.soptTitle2
         }
@@ -133,12 +129,10 @@ final class HomeView : UIView {
         }
         circleImg.do {
             $0.backgroundColor = .soptWhite
-            //$0.image = "ostin_face"
-            $0.image = UIImage(named: "ostin_face")
+            $0.makeCornerRadius(ratio: 50)
         }
         
         label1.do {
-            $0.text = "오스틴 님의"
             $0.textColor = .soptWhite
             $0.font = UIFont.soptHeadLine1
         }
@@ -157,12 +151,10 @@ final class HomeView : UIView {
         }
         
         place.do {
-            $0.text = "안산 금성산업"
             $0.textColor = .soptGrey600
             $0.font = UIFont.soptTitle2
         }
         time.do {
-            $0.text = "6개월째"
             $0.textColor = .soptGrey600
             $0.font = UIFont.soptTitle2
         }

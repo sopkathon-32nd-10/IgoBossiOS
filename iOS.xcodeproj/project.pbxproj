@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		14DDCF732A193D3F00CF2DFD /* PayResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDCF722A193D3F00CF2DFD /* PayResultView.swift */; };
 		14DDCF752A193D5100CF2DFD /* PayResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDCF742A193D5100CF2DFD /* PayResultViewController.swift */; };
-		1D5962882A192CE30050979A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5962872A192CE30050979A /* HomeView.swift */; };
+		1D5962882A192CE30050979A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5962872A192CE30050979A /* HomeViewController.swift */; };
 		2AB74F822A190DEF005D5932 /* Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB74F812A190DEF005D5932 /* Check.swift */; };
 		2AB74F842A191175005D5932 /* CheckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB74F832A191175005D5932 /* CheckTableViewCell.swift */; };
 		D24F42662A18C94B00487260 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F42652A18C94B00487260 /* UIFont+.swift */; };
@@ -18,7 +18,7 @@
 		D263D8A92A18F813002BEEF5 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8A82A18F813002BEEF5 /* TabbarViewController.swift */; };
 		D263D8AE2A18F86C002BEEF5 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8AD2A18F86C002BEEF5 /* CheckViewController.swift */; };
 		D263D8B02A18F879002BEEF5 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8AF2A18F879002BEEF5 /* PayViewController.swift */; };
-		D263D8B22A18F883002BEEF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8B12A18F883002BEEF5 /* HomeViewController.swift */; };
+		D263D8B22A18F883002BEEF5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8B12A18F883002BEEF5 /* HomeView.swift */; };
 		D263D8BE2A1931AB002BEEF5 /* PayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8BD2A1931AB002BEEF5 /* PayView.swift */; };
 		D263D8C02A195858002BEEF5 /* UITabbar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8BF2A195858002BEEF5 /* UITabbar+.swift */; };
 		D263D8C32A196491002BEEF5 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D263D8C22A196491002BEEF5 /* HomeModel.swift */; };
@@ -68,7 +68,7 @@
 /* Begin PBXFileReference section */
 		14DDCF722A193D3F00CF2DFD /* PayResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayResultView.swift; sourceTree = "<group>"; };
 		14DDCF742A193D5100CF2DFD /* PayResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayResultViewController.swift; sourceTree = "<group>"; };
-		1D5962872A192CE30050979A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1D5962872A192CE30050979A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2AB74F812A190DEF005D5932 /* Check.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check.swift; sourceTree = "<group>"; };
 		2AB74F832A191175005D5932 /* CheckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTableViewCell.swift; sourceTree = "<group>"; };
 		D24F42652A18C94B00487260 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 		D263D8A82A18F813002BEEF5 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		D263D8AD2A18F86C002BEEF5 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
 		D263D8AF2A18F879002BEEF5 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
-		D263D8B12A18F883002BEEF5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D263D8B12A18F883002BEEF5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D263D8BD2A1931AB002BEEF5 /* PayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayView.swift; sourceTree = "<group>"; };
 		D263D8BF2A195858002BEEF5 /* UITabbar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabbar+.swift"; sourceTree = "<group>"; };
 		D263D8C22A196491002BEEF5 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 		1D5962862A192CD60050979A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1D5962872A192CE30050979A /* HomeView.swift */,
+				1D5962872A192CE30050979A /* HomeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,7 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				1D5962862A192CD60050979A /* View */,
-				D263D8B12A18F883002BEEF5 /* HomeViewController.swift */,
+				D263D8B12A18F883002BEEF5 /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -502,9 +502,9 @@
 				D263D8C02A195858002BEEF5 /* UITabbar+.swift in Sources */,
 				D294E2D42A17DE23001E74F1 /* BaseViewController.swift in Sources */,
 				D263D8B02A18F879002BEEF5 /* PayViewController.swift in Sources */,
-				D263D8B22A18F883002BEEF5 /* HomeViewController.swift in Sources */,
+				D263D8B22A18F883002BEEF5 /* HomeView.swift in Sources */,
 				D24F42662A18C94B00487260 /* UIFont+.swift in Sources */,
-				1D5962882A192CE30050979A /* HomeView.swift in Sources */,
+				1D5962882A192CE30050979A /* HomeViewController.swift in Sources */,
 				D263D8D52A198BDA002BEEF5 /* CheckModel.swift in Sources */,
 				14DDCF732A193D3F00CF2DFD /* PayResultView.swift in Sources */,
 				D263D8CC2A196D4F002BEEF5 /* PayModel.swift in Sources */,

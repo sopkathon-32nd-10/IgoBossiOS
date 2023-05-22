@@ -35,7 +35,19 @@ extension HomeViewController {
             }
             print("🍏🍏🍏🍏🍏🍏🍏")
             self.userData = result
+            self.dataBind()
         })
-
+    }
+    
+    func dataBind() {
+        guard let userData = self.userData else { return }
+        rootView.realname.text = userData.name
+        rootView.birthday.text = userData.birth
+        rootView.time.text = userData.name
+        rootView.country.text = userData.nationality
+        rootView.circleImg.kfSetImage(url: userData.profileImg)
+        rootView.label1.text = "\(userData.name ?? "누구") 님의"
+        rootView.place.text = userData.workspace
+        rootView.time.text = "\(userData.workingMonths ?? 0)개월"
     }
 }
