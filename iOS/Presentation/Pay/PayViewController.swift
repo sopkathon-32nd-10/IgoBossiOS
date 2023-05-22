@@ -27,6 +27,12 @@ class PayViewController: BaseViewController {
         target()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        dismissKeyboardWhenTappedAround()
+    }
+    
     private func style() {
         self.view.backgroundColor = .soptWhite
     }

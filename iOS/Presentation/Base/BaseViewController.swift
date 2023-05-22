@@ -86,11 +86,47 @@ class BaseViewController : UIViewController{
         return nil
     }
     
-    //MARK: - Keyboard 관련 처리
-   
-    
     //MARK: - Action Method
+    
+    @objc func handleSwipeGesture(_ gestureRecognizer: UISwipeGestureRecognizer) {
+        print(#function)
+        if gestureRecognizer.state == .recognized {
+            navigationController?.popViewController(animated: true)
+        }
+    }
     
 }
 
+extension BaseViewController: UINavigationControllerDelegate, UIGestureRecognizerDelegate {
+    
+//    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+//
+//        print(#function)
+//        // 1. 현재 뷰컨트롤러에서 Swipe 제스처 인식기를 생성합니다.
+//        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture(_:)))
+//        swipeGesture.direction = .right
+//        view.addGestureRecognizer(swipeGesture)
+//
+//        // 2. 이전 뷰컨트롤러에서 Swipe 제스처 인식기를 제거합니다.
+//        if let previousViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) {
+//            for recognizer in previousViewController.view.gestureRecognizers ?? [] {
+//                previousViewController.view.removeGestureRecognizer(recognizer)
+//            }
+//        }
+//    }
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        print("Child ViewControllers", navigationController.viewControllers.count)
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = navigationController.viewControllers.count > 1
+        
+    }
+
+        
+    
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        guard let navigationController else { return false }
+        return navigationController.viewControllers.count > 1
+    }
+
+    
+}
 
