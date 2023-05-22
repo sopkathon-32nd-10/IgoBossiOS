@@ -161,9 +161,7 @@ final class HomeView : UIView {
     }
     
     private func hierarchy() {
-        self.addSubviews(
-            squareView, icon, label1 , label3
-        )
+        self.addSubviews(squareView, icon, label1 , label3)
         squareView.addSubviews(
              workingStatus, name,  circleImg, squareView2,squareView3
         )
