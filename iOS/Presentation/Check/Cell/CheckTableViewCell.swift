@@ -10,15 +10,19 @@ import UIKit
 import SnapKit
 import Then
 
+protocol CheckButtonDidTap: AnyObject {
+    func patchCheckStatus(id: Int, status: Bool)
+}
+
 final class CheckTableViewCell: UITableViewCell {
     
+    var checkID: Int = 0
+    weak var delegate: CheckButtonDidTap?
     var isTapped: Bool = false {
         didSet {
-            tapped()
+            configureCheckState()
         }
     }
-    
-    var handler: (() -> (Void))?
 
 
     static let identifier = "CheckTableViewCell"
@@ -94,25 +98,31 @@ final class CheckTableViewCell: UITableViewCell {
         checkListContent.snp.makeConstraints {
             $0.leading.equalTo(checkBoxButton.snp.trailing).offset(14)
             $0.top.equalTo(checkListTitle.snp.bottom).offset(8)
+            $0.width.equalTo(181)
+            $0.height.equalTo(30)
         }
-
-    }
-    
-    func tapped() {
-        checkBoxButton.setImage(isTapped ? Image.btnCheck : Image.btnUnCheck, for: .normal)
-        backGround.backgroundColor = isTapped ? .soptYellow200 : .soptYellow000
     }
     
     @objc
     func checkBoxButtonTapped() {
-        handler?()
+        delegate?.patchCheckStatus(id: checkID, status: isTapped)
     }
     
     func configureCell(_ check: CheckListDatum){
+        print("🙏🙏🙏🙏🙏🙏🙏🙏")
         checkListTitle.text = check.detail?.title
         checkListContent.text = check.detail?.content
         isTapped = check.status ?? false
+        checkID = check.detail?.checkID ?? 0
     }
     
-
+    func configureCheckState() {
+        if isTapped {
+            checkBoxButton.setImage(Image.btnCheck, for: .normal)
+            backGround.backgroundColor = .soptYellow200
+        } else {
+            checkBoxButton.setImage(Image.btnUnCheck, for: .normal)
+            backGround.backgroundColor = .soptYellow000
+        }
+    }
 }

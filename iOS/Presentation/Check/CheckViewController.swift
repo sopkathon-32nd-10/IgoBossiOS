@@ -14,20 +14,16 @@ import SafariServices
 
 final class CheckViewController: BaseViewController {
     
-    private var dummy = Check.dummy() {
-        didSet {
-            self.checkTableView.reloadData()
-        }
-    }
     
     private var checkData: CheckResponse?
     
     var myAllCount = 0
     
+    
     private let checkListLabel = UILabel()
     private let checkListContent = UILabel()
     private let achievementText = UILabel()
-    private let achievementPercent = UILabel()
+    public let achievementPercent = UILabel()
     private let achievementRate = UIImageView()
     private let myAchievementRate = UIImageView()
     
@@ -170,13 +166,16 @@ final class CheckViewController: BaseViewController {
             }
             print("🍏🍏🍏🍏🍏🍏🍏")
             self.checkData = result
+            self.achievementPercent.text = "\(result.progress)%"
+            self.checkTableView.reloadData()
+            self.myAllCount = result.progress / 10
         })
     }
 }
 
 extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummy.count
+        return self.checkData?.checkListData.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -184,25 +183,22 @@ extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
         {return UITableViewCell()}
         
         cell.configureCell(checkData?.checkListData[indexPath.row] ?? CheckListDatum(id: nil, status: nil, detail: nil))
+        cell.delegate = self
+        //            self.dummy[indexPath.row].checkTapped.toggle()
+        //            if self.dummy[indexPath.row].checkTapped {
+        //                self.myAllCount = self.myAllCount + 1
+        //            } else {
+        //                self.myAllCount = self.myAllCount - 1
+        //            }
         
-        cell.handler = { [weak self] in
-            guard let self else { return }
-            self.dummy[indexPath.row].checkTapped.toggle()
-            if self.dummy[indexPath.row].checkTapped {
-                self.myAllCount = self.myAllCount + 1
-            } else {
-                self.myAllCount = self.myAllCount - 1
-            }
-            
-            self.myAchievementRate.snp.remakeConstraints {
-                $0.top.equalTo(self.achievementRate)
-                $0.leading.equalTo(self.achievementRate)
-                $0.height.equalTo(24)
-                $0.width.equalTo(self.myAllCount * 30)
-            }
-            self.achievementPercent.do {
-                $0.text = String(self.myAllCount * 10) + "%"
-            }
+        self.myAchievementRate.snp.remakeConstraints {
+            $0.top.equalTo(self.achievementRate)
+            $0.leading.equalTo(self.achievementRate)
+            $0.height.equalTo(24)
+            $0.width.equalTo(self.myAllCount * 30)
+        }
+        self.achievementPercent.do {
+            $0.text = String(self.myAllCount * 10) + "%"
         }
         
         return cell
@@ -222,5 +218,16 @@ extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             return 0
         }
+    }
+}
+
+extension CheckViewController: CheckButtonDidTap {
+    func patchCheckStatus(id: Int, status: Bool) {
+        print("⚙️⚙️⚙️⚙️⚙️⚙️⚙️")
+        print(id, status)
+        CheckAPI.shared.patchCheck(query: CheckRequest(userId: 1), body: Check(checkId: id, status: !status), completion: { _ in
+            print("🍏🍏🍏🍏🍏🍏🍏")
+            self.requestCheckAPI()
+        })
     }
 }

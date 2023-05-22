@@ -8,6 +8,9 @@
 import Foundation
 
 struct VoidResult: Codable {
-    
+    var code: Int
+    var data: Bool
+    var message: String?
 }
+
 
