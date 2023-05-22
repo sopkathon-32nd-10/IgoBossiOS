@@ -46,7 +46,7 @@ class PayViewController: BaseViewController {
     }
     
     @objc func calculateButtonDidTap() {
-        presentToPayResultView()
+        requestPayAPI()
     }
     
 }
@@ -97,7 +97,7 @@ extension PayViewController {
     
     func presentToPayResultView() {
         let payResultViewController = PayResultViewController()
-        payResultViewController.dataBind(pay: rootView.payTextField.text!, time: rootView.workTimeTextField.text!)
+        payResultViewController.dataBind(self.payInfo)
         payResultViewController.modalPresentationStyle = .formSheet
         self.present(payResultViewController, animated: true)
     }
